@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Admin\ChucNang\khachhang\frmSuaKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Admin\ChucNang\khachhang\frmThemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Admin\ChucNang\khachhang\uc_khachhang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Admin\ChucNang\menu\admin_Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Admin\ChucNang\menu\frmEditBillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Admin\ChucNang\menu\ThemMonAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Admin\ChucNang\Tinh trang may\uc_tinhTrangMay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Admin\LogAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LoginMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="thuVien\RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="User\LogUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
