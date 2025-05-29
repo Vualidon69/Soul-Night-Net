@@ -2,22 +2,30 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyQuanNet.Admin.ChucNang.menu;
 
 namespace QuanLyQuanNet.Admin.ChucNang
 {
     public partial class admin_Menu : UserControl
     {
+        private DataTable menuData;
+        private const string MENU_DATA_FILE = "menu_data.xml";
+
         public admin_Menu()
         {
             InitializeComponent();
             LoadMenuData();
             dgv_style();
 
+            // Explicitly reference frmEditBillDetail to help IDE recognize it
+            // frmEditBillDetail tempForm = new frmEditBillDetail();
         }
         // bang de su ly du lieu mon an
 
@@ -43,10 +51,15 @@ namespace QuanLyQuanNet.Admin.ChucNang
             dt.Rows.Add("MA007", "Mì trứng", "50,000 VND");
             dt.Rows.Add("MA010", "Mì gói", "50,000 VND");
             dt.Rows.Add("MA012", "BCS", "199,000 VND");
+            dgvMenu.DataSource = dt;
+
+        }
+        private void dgv_style()
+        {
 
             dgvMenu.EnableHeadersVisualStyles = false;
             dgvMenu.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvMenu.ColumnHeadersDefaultCellStyle.BackColor;
-            dgvMenu.DataSource = dt;
+
 
             dgvMenu.Height = dgvMenu.Rows.Count * dgvMenu.RowTemplate.Height + dgvMenu.ColumnHeadersHeight;
             // giúp click vô vẫn hiện màu
@@ -54,15 +67,8 @@ namespace QuanLyQuanNet.Admin.ChucNang
             {
                 dgvMenu.CurrentRow.Selected = true;
             };
-
-        }
-        private void dgv_style()
-        {
-
             // thiết lập cho dòng đầu
             dgvMenu.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10); // Chỉnh font to hơn
-
-
 
             // Thiết lập kiểu đường kẻ
             dgvMenu.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal; // Chỉ có đường kẻ ngang
@@ -215,9 +221,6 @@ namespace QuanLyQuanNet.Admin.ChucNang
             }
         }
 
-        private void admin_Menu_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

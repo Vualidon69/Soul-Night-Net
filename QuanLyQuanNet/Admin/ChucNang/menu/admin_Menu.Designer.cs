@@ -56,7 +56,6 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(180, 34);
             txtSearch.TabIndex = 0;
-            txtSearch.TextChanged += textBox1_TextChanged;
             txtSearch.Enter += txtSearch_Enter;
             txtSearch.Leave += txtSearch_Leave;
             // 
@@ -88,19 +87,19 @@
             dgvMenu.ReadOnly = true;
             dgvMenu.RowHeadersVisible = false;
             dgvMenu.RowHeadersWidth = 51;
-            dgvMenu.RowTemplate.Height = 29;
             dgvMenu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMenu.Size = new Size(414, 474);
-            dgvMenu.TabIndex = 3;
+            dgvMenu.TabIndex = 4;
             dgvMenu.CellClick += dgvMenu_CellClick;
             // 
             // img_monAn
             // 
-            img_monAn.Location = new Point(450, 80);
+            img_monAn.BackColor = SystemColors.ActiveCaption;
+            img_monAn.Location = new Point(447, 80);
             img_monAn.Name = "img_monAn";
             img_monAn.Size = new Size(246, 162);
             img_monAn.SizeMode = PictureBoxSizeMode.Zoom;
-            img_monAn.TabIndex = 4;
+            img_monAn.TabIndex = 5;
             img_monAn.TabStop = false;
             // 
             // pnl_chiTietMonAn
@@ -118,7 +117,7 @@
             pnl_chiTietMonAn.Location = new Point(450, 283);
             pnl_chiTietMonAn.Name = "pnl_chiTietMonAn";
             pnl_chiTietMonAn.Size = new Size(246, 251);
-            pnl_chiTietMonAn.TabIndex = 5;
+            pnl_chiTietMonAn.TabIndex = 6;
             // 
             // lb_tenMon
             // 
@@ -126,7 +125,7 @@
             lb_tenMon.Location = new Point(12, 127);
             lb_tenMon.Name = "lb_tenMon";
             lb_tenMon.Size = new Size(66, 20);
-            lb_tenMon.TabIndex = 6;
+            lb_tenMon.TabIndex = 7;
             lb_tenMon.Text = "Tên món";
             // 
             // txt_tenMon
@@ -184,7 +183,7 @@
             panel1.Location = new Point(11, 80);
             panel1.Name = "panel1";
             panel1.Size = new Size(414, 474);
-            panel1.TabIndex = 6;
+            panel1.TabIndex = 7;
             // 
             // lb_timKiemMonAn
             // 
@@ -192,9 +191,8 @@
             lb_timKiemMonAn.Location = new Point(13, 23);
             lb_timKiemMonAn.Name = "lb_timKiemMonAn";
             lb_timKiemMonAn.Size = new Size(124, 20);
-            lb_timKiemMonAn.TabIndex = 7;
+            lb_timKiemMonAn.TabIndex = 8;
             lb_timKiemMonAn.Text = "Tìm kiếm món ăn";
-            lb_timKiemMonAn.Click += lb_timKiemMonAn_Click;
             // 
             // admin_Menu
             // 
@@ -209,7 +207,6 @@
             Controls.Add(txtSearch);
             Name = "admin_Menu";
             Size = new Size(715, 575);
-            Load += admin_Menu_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMenu).EndInit();
             ((System.ComponentModel.ISupportInitialize)img_monAn).EndInit();
             pnl_chiTietMonAn.ResumeLayout(false);

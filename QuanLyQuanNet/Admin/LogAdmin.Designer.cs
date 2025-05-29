@@ -19,7 +19,6 @@
             }
             base.Dispose(disposing);
         }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -33,7 +32,7 @@
             roundedPanel1 = new RoundedPanel();
             button2 = new Button();
             button9 = new Button();
-            button1 = new Button();
+            button_NhanVien = new Button();
             button6 = new Button();
             button5 = new Button();
             button_khachHang = new Button();
@@ -64,7 +63,7 @@
             pnlMenu.Controls.Add(roundedPanel1);
             pnlMenu.Controls.Add(button2);
             pnlMenu.Controls.Add(button9);
-            pnlMenu.Controls.Add(button1);
+            pnlMenu.Controls.Add(button_NhanVien);
             pnlMenu.Controls.Add(button6);
             pnlMenu.Controls.Add(button5);
             pnlMenu.Controls.Add(button_khachHang);
@@ -116,14 +115,15 @@
             button9.Text = "Thông kê";
             button9.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button_NhanVien
             // 
-            button1.Location = new Point(3, 414);
-            button1.Name = "button1";
-            button1.Size = new Size(246, 39);
-            button1.TabIndex = 2;
-            button1.Text = "Nhân viên";
-            button1.UseVisualStyleBackColor = true;
+            button_NhanVien.Location = new Point(3, 414);
+            button_NhanVien.Name = "button_NhanVien";
+            button_NhanVien.Size = new Size(246, 39);
+            button_NhanVien.TabIndex = 2;
+            button_NhanVien.Text = "Nhân viên";
+            button_NhanVien.UseVisualStyleBackColor = true;
+           
             // 
             // button6
             // 
@@ -161,6 +161,7 @@
             btn_lichsu.TabIndex = 2;
             btn_lichsu.Text = "Lịch sử";
             btn_lichsu.UseVisualStyleBackColor = true;
+            btn_lichsu.Click += btn_lichsu_Click;
             // 
             // btn_status
             // 
@@ -284,7 +285,6 @@
         }
 
         #endregion
-
         private RoundedPanel pnlMenu;
         private RoundedPanel pn_dichvu;
         private PictureBox pictureBox1;
@@ -304,7 +304,7 @@
         private PictureBox img_dangXuat;
         private Button btn_status;
         private Button button9;
-        private Button button1;
+        private Button button_NhanVien;
         private RoundedPanel roundedPanel1;
     }
 }

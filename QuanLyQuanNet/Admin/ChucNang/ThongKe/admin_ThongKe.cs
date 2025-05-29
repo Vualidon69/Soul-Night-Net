@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyQuanNet
+namespace QuanLyQuanNet.Admin
 {
-    public partial class UserControl1 : UserControl
+    public partial class admin_ThongKe : UserControl
     {
-        public UserControl1()
+        public admin_ThongKe()
         {
             InitializeComponent();
         }

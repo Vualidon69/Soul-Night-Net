@@ -1,6 +1,6 @@
-﻿namespace QuanLyQuanNet
+﻿namespace QuanLyQuanNet.Admin
 {
-    partial class UserControl1
+    partial class admin_ThongKe
     {
         /// <summary> 
         /// Required designer variable.
@@ -35,7 +35,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Name = "UserControl1";
-            Size = new Size(705, 641);
+            Size = new Size(715, 575);
             ResumeLayout(false);
         }
 

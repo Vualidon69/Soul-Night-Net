@@ -30,293 +30,309 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            button_help = new Button();
+            button_suaMay = new Button();
             comboBox_loaiMay = new ComboBox();
-            comboBox1 = new ComboBox();
-            button2 = new Button();
+            comboBox_DanhSachMay = new ComboBox();
+            button_XoaMay = new Button();
             button_themMay = new Button();
             label_loaiMay = new Label();
-            dataGridView1 = new DataGridView();
+            dataGridView_thongTinMay = new DataGridView();
             panel2 = new Panel();
+            button_ChinhSuaMonAn = new Button();
+            comboBox_PhuongThucThanhToan = new ComboBox();
             textBox6 = new TextBox();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            dataGridView2 = new DataGridView();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            label10 = new Label();
-            button4 = new Button();
-            label9 = new Label();
-            button3 = new Button();
-            label8 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label5 = new Label();
-            label4 = new Label();
+            textBox_TongCong = new TextBox();
+            textBox_TienMay = new TextBox();
+            textBox_TongGio = new TextBox();
+            dataGridView_GoiDichVu = new DataGridView();
+            comboBox_ThongTinKhachHang = new ComboBox();
+            label_ThanhTien = new Label();
+            button_ThanhToan = new Button();
+            label_KhuyenMai = new Label();
+            button_XuatHoaDon = new Button();
+            label_ThanhVien = new Label();
+            label_MaySo = new Label();
+            label_TongCong = new Label();
+            label_TienMay = new Label();
+            label_TongGio = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_thongTinMay).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_GoiDichVu).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(button_help);
+            panel1.Controls.Add(button_suaMay);
             panel1.Controls.Add(comboBox_loaiMay);
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(comboBox_DanhSachMay);
+            panel1.Controls.Add(button_XoaMay);
             panel1.Controls.Add(button_themMay);
             panel1.Controls.Add(label_loaiMay);
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(dataGridView_thongTinMay);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(439, 575);
             panel1.TabIndex = 0;
             // 
-            // button_help
+            // button_suaMay
             // 
-            button_help.Location = new Point(238, 8);
-            button_help.Name = "button_help";
-            button_help.Size = new Size(94, 29);
-            button_help.TabIndex = 6;
-            button_help.Text = "button5";
-            button_help.UseVisualStyleBackColor = true;
+            button_suaMay.Location = new Point(265, 67);
+            button_suaMay.Name = "button_suaMay";
+            button_suaMay.Size = new Size(94, 29);
+            button_suaMay.TabIndex = 6;
+            button_suaMay.Text = "Sửa máy";
+            button_suaMay.UseVisualStyleBackColor = true;
+            button_suaMay.Click += button_suaMay_Click;
             // 
             // comboBox_loaiMay
             // 
             comboBox_loaiMay.FormattingEnabled = true;
-            comboBox_loaiMay.Location = new Point(3, 9);
+            comboBox_loaiMay.Location = new Point(3, 22);
             comboBox_loaiMay.Name = "comboBox_loaiMay";
             comboBox_loaiMay.Size = new Size(151, 28);
             comboBox_loaiMay.TabIndex = 5;
+            comboBox_loaiMay.SelectedIndexChanged += comboBox_loaiMay_SelectedIndexChanged;
             // 
-            // comboBox1
+            // comboBox_DanhSachMay
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(270, 50);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(161, 28);
-            comboBox1.TabIndex = 4;
+            comboBox_DanhSachMay.FormattingEnabled = true;
+            comboBox_DanhSachMay.Location = new Point(221, 22);
+            comboBox_DanhSachMay.Name = "comboBox_DanhSachMay";
+            comboBox_DanhSachMay.Size = new Size(161, 28);
+            comboBox_DanhSachMay.TabIndex = 4;
             // 
-            // button2
+            // button_XoaMay
             // 
-            button2.Location = new Point(137, 50);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 32);
-            button2.TabIndex = 2;
-            button2.Text = "button1";
-            button2.UseVisualStyleBackColor = true;
+            button_XoaMay.Location = new Point(137, 67);
+            button_XoaMay.Name = "button_XoaMay";
+            button_XoaMay.Size = new Size(112, 32);
+            button_XoaMay.TabIndex = 2;
+            button_XoaMay.Text = "Xóa máy";
+            button_XoaMay.UseVisualStyleBackColor = true;
+            button_XoaMay.Click += button_XoaMay_Click;
             // 
             // button_themMay
             // 
-            button_themMay.Location = new Point(17, 51);
+            button_themMay.Location = new Point(17, 67);
             button_themMay.Name = "button_themMay";
             button_themMay.Size = new Size(114, 32);
             button_themMay.TabIndex = 2;
             button_themMay.Text = "Thêm máy";
             button_themMay.UseVisualStyleBackColor = true;
+            button_themMay.Click += button_themMay_Click;
             // 
             // label_loaiMay
             // 
             label_loaiMay.AutoSize = true;
-            label_loaiMay.Location = new Point(17, 0);
+            label_loaiMay.Location = new Point(3, 0);
             label_loaiMay.Name = "label_loaiMay";
             label_loaiMay.Size = new Size(69, 20);
             label_loaiMay.TabIndex = 0;
             label_loaiMay.Text = "Loại máy";
             // 
-            // dataGridView1
+            // dataGridView_thongTinMay
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 112);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(436, 463);
-            dataGridView1.TabIndex = 4;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView_thongTinMay.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_thongTinMay.Location = new Point(0, 112);
+            dataGridView_thongTinMay.Name = "dataGridView_thongTinMay";
+            dataGridView_thongTinMay.RowHeadersWidth = 51;
+            dataGridView_thongTinMay.Size = new Size(436, 463);
+            dataGridView_thongTinMay.TabIndex = 4;
             // 
             // panel2
             // 
+            panel2.Controls.Add(button_ChinhSuaMonAn);
+            panel2.Controls.Add(comboBox_PhuongThucThanhToan);
             panel2.Controls.Add(textBox6);
             panel2.Controls.Add(textBox5);
             panel2.Controls.Add(textBox4);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(dataGridView2);
-            panel2.Controls.Add(comboBox3);
-            panel2.Controls.Add(comboBox2);
-            panel2.Controls.Add(label10);
-            panel2.Controls.Add(button4);
-            panel2.Controls.Add(label9);
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label4);
+            panel2.Controls.Add(textBox_TongCong);
+            panel2.Controls.Add(textBox_TienMay);
+            panel2.Controls.Add(textBox_TongGio);
+            panel2.Controls.Add(dataGridView_GoiDichVu);
+            panel2.Controls.Add(comboBox_ThongTinKhachHang);
+            panel2.Controls.Add(label_ThanhTien);
+            panel2.Controls.Add(button_ThanhToan);
+            panel2.Controls.Add(label_KhuyenMai);
+            panel2.Controls.Add(button_XuatHoaDon);
+            panel2.Controls.Add(label_ThanhVien);
+            panel2.Controls.Add(label_MaySo);
+            panel2.Controls.Add(label_TongCong);
+            panel2.Controls.Add(label_TienMay);
+            panel2.Controls.Add(label_TongGio);
             panel2.Dock = DockStyle.Right;
             panel2.Location = new Point(437, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(278, 575);
             panel2.TabIndex = 1;
             // 
+            // button_ChinhSuaMonAn
+            // 
+            button_ChinhSuaMonAn.Location = new Point(24, 232);
+            button_ChinhSuaMonAn.Name = "button_ChinhSuaMonAn";
+            button_ChinhSuaMonAn.Size = new Size(227, 33);
+            button_ChinhSuaMonAn.TabIndex = 7;
+            button_ChinhSuaMonAn.Text = "Chỉnh sửa dịch vụ";
+            button_ChinhSuaMonAn.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_PhuongThucThanhToan
+            // 
+            comboBox_PhuongThucThanhToan.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox_PhuongThucThanhToan.ForeColor = Color.Silver;
+            comboBox_PhuongThucThanhToan.FormattingEnabled = true;
+            comboBox_PhuongThucThanhToan.Location = new Point(0, 496);
+            comboBox_PhuongThucThanhToan.Name = "comboBox_PhuongThucThanhToan";
+            comboBox_PhuongThucThanhToan.Size = new Size(272, 25);
+            comboBox_PhuongThucThanhToan.TabIndex = 6;
+            comboBox_PhuongThucThanhToan.Text = "Phương thức Thanh Toán";
+            // 
             // textBox6
             // 
-            textBox6.Location = new Point(178, 423);
+            textBox6.Location = new Point(134, 423);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 27);
+            textBox6.Size = new Size(144, 27);
             textBox6.TabIndex = 5;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(178, 379);
+            textBox5.Location = new Point(134, 379);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 27);
+            textBox5.Size = new Size(144, 27);
             textBox5.TabIndex = 5;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(178, 337);
+            textBox4.Location = new Point(134, 337);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 27);
+            textBox4.Size = new Size(144, 27);
             textBox4.TabIndex = 5;
             // 
-            // textBox3
+            // textBox_TongCong
             // 
-            textBox3.Location = new Point(167, 265);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 27);
-            textBox3.TabIndex = 5;
+            textBox_TongCong.Location = new Point(134, 272);
+            textBox_TongCong.Name = "textBox_TongCong";
+            textBox_TongCong.Size = new Size(133, 27);
+            textBox_TongCong.TabIndex = 5;
             // 
-            // textBox2
+            // textBox_TienMay
             // 
-            textBox2.Location = new Point(167, 70);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 27);
-            textBox2.TabIndex = 5;
+            textBox_TienMay.Location = new Point(167, 70);
+            textBox_TienMay.Name = "textBox_TienMay";
+            textBox_TienMay.Size = new Size(100, 27);
+            textBox_TienMay.TabIndex = 5;
             // 
-            // textBox1
+            // textBox_TongGio
             // 
-            textBox1.Location = new Point(167, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 27);
-            textBox1.TabIndex = 5;
+            textBox_TongGio.Location = new Point(172, 27);
+            textBox_TongGio.Name = "textBox_TongGio";
+            textBox_TongGio.Size = new Size(100, 27);
+            textBox_TongGio.TabIndex = 5;
+            textBox_TongGio.TextChanged += textBox_TongGio_TextChanged;
             // 
-            // dataGridView2
+            // dataGridView_GoiDichVu
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(0, 103);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(278, 123);
-            dataGridView2.TabIndex = 4;
-            dataGridView2.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView_GoiDichVu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_GoiDichVu.Location = new Point(0, 103);
+            dataGridView_GoiDichVu.Name = "dataGridView_GoiDichVu";
+            dataGridView_GoiDichVu.RowHeadersWidth = 51;
+            dataGridView_GoiDichVu.Size = new Size(278, 123);
+            dataGridView_GoiDichVu.TabIndex = 4;
             // 
-            // comboBox3
+            // comboBox_ThongTinKhachHang
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(11, 301);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(267, 28);
-            comboBox3.TabIndex = 3;
+            comboBox_ThongTinKhachHang.ForeColor = Color.Silver;
+            comboBox_ThongTinKhachHang.FormattingEnabled = true;
+            comboBox_ThongTinKhachHang.Location = new Point(0, 301);
+            comboBox_ThongTinKhachHang.Name = "comboBox_ThongTinKhachHang";
+            comboBox_ThongTinKhachHang.Size = new Size(278, 28);
+            comboBox_ThongTinKhachHang.TabIndex = 3;
+            comboBox_ThongTinKhachHang.Text = "Thông tin khách hàng";
             // 
-            // comboBox2
+            // label_ThanhTien
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(8, 489);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(267, 28);
-            comboBox2.TabIndex = 3;
+            label_ThanhTien.AutoSize = true;
+            label_ThanhTien.Location = new Point(24, 430);
+            label_ThanhTien.Name = "label_ThanhTien";
+            label_ThanhTien.Size = new Size(81, 20);
+            label_ThanhTien.TabIndex = 0;
+            label_ThanhTien.Text = "Thành tiền:";
             // 
-            // label10
+            // button_ThanhToan
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(24, 430);
-            label10.Name = "label10";
-            label10.Size = new Size(50, 20);
-            label10.TabIndex = 0;
-            label10.Text = "label1";
+            button_ThanhToan.Location = new Point(154, 527);
+            button_ThanhToan.Name = "button_ThanhToan";
+            button_ThanhToan.Size = new Size(121, 32);
+            button_ThanhToan.TabIndex = 2;
+            button_ThanhToan.Text = "Thanh Toán";
+            button_ThanhToan.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // label_KhuyenMai
             // 
-            button4.Location = new Point(154, 527);
-            button4.Name = "button4";
-            button4.Size = new Size(121, 32);
-            button4.TabIndex = 2;
-            button4.Text = "button1";
-            button4.UseVisualStyleBackColor = true;
+            label_KhuyenMai.AutoSize = true;
+            label_KhuyenMai.Location = new Point(24, 386);
+            label_KhuyenMai.Name = "label_KhuyenMai";
+            label_KhuyenMai.Size = new Size(89, 20);
+            label_KhuyenMai.TabIndex = 0;
+            label_KhuyenMai.Text = "Khuyến mãi:";
             // 
-            // label9
+            // button_XuatHoaDon
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(24, 386);
-            label9.Name = "label9";
-            label9.Size = new Size(50, 20);
-            label9.TabIndex = 0;
-            label9.Text = "label1";
+            button_XuatHoaDon.Location = new Point(8, 527);
+            button_XuatHoaDon.Name = "button_XuatHoaDon";
+            button_XuatHoaDon.Size = new Size(121, 32);
+            button_XuatHoaDon.TabIndex = 2;
+            button_XuatHoaDon.Text = "Xuất Hóa Đơn";
+            button_XuatHoaDon.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // label_ThanhVien
             // 
-            button3.Location = new Point(8, 527);
-            button3.Name = "button3";
-            button3.Size = new Size(121, 32);
-            button3.TabIndex = 2;
-            button3.Text = "button1";
-            button3.UseVisualStyleBackColor = true;
+            label_ThanhVien.AutoSize = true;
+            label_ThanhVien.Location = new Point(24, 344);
+            label_ThanhVien.Name = "label_ThanhVien";
+            label_ThanhVien.Size = new Size(83, 20);
+            label_ThanhVien.TabIndex = 0;
+            label_ThanhVien.Text = "Thành viên:";
             // 
-            // label8
+            // label_MaySo
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(24, 344);
-            label8.Name = "label8";
-            label8.Size = new Size(50, 20);
-            label8.TabIndex = 0;
-            label8.Text = "label1";
+            label_MaySo.AutoSize = true;
+            label_MaySo.Location = new Point(24, 45);
+            label_MaySo.Name = "label_MaySo";
+            label_MaySo.Size = new Size(37, 20);
+            label_MaySo.TabIndex = 0;
+            label_MaySo.Text = "Máy";
             // 
-            // label6
+            // label_TongCong
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(24, 51);
-            label6.Name = "label6";
-            label6.Size = new Size(50, 20);
-            label6.TabIndex = 0;
-            label6.Text = "label1";
+            label_TongCong.AutoSize = true;
+            label_TongCong.Location = new Point(23, 272);
+            label_TongCong.Name = "label_TongCong";
+            label_TongCong.Size = new Size(82, 20);
+            label_TongCong.TabIndex = 0;
+            label_TongCong.Text = "Tổng Cộng";
             // 
-            // label7
+            // label_TienMay
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(24, 268);
-            label7.Name = "label7";
-            label7.Size = new Size(50, 20);
-            label7.TabIndex = 0;
-            label7.Text = "label1";
+            label_TienMay.AutoSize = true;
+            label_TienMay.Location = new Point(92, 77);
+            label_TienMay.Name = "label_TienMay";
+            label_TienMay.Size = new Size(69, 20);
+            label_TienMay.TabIndex = 0;
+            label_TienMay.Text = "Tiền máy";
             // 
-            // label5
+            // label_TongGio
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(111, 77);
-            label5.Name = "label5";
-            label5.Size = new Size(50, 20);
-            label5.TabIndex = 0;
-            label5.Text = "label1";
-            label5.Click += label5_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(111, 30);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 0;
-            label4.Text = "label1";
+            label_TongGio.AutoSize = true;
+            label_TongGio.Location = new Point(92, 30);
+            label_TongGio.Name = "label_TongGio";
+            label_TongGio.Size = new Size(69, 20);
+            label_TongGio.TabIndex = 0;
+            label_TongGio.Text = "Tổng giờ";
             // 
             // contextMenuStrip1
             // 
@@ -334,10 +350,10 @@
             Size = new Size(715, 575);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_thongTinMay).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_GoiDichVu).EndInit();
             ResumeLayout(false);
         }
 
@@ -348,30 +364,37 @@
         private Label label2;
         private Label label_loaiMay;
         private Panel panel2;
-        private Label label5;
-        private Label label4;
-        private ComboBox comboBox1;
-        private Button button2;
+        private Label label_TienMay;
+        private Label label_TongGio;
+        private ComboBox comboBox_DanhSachMay;
+        private Button button_XoaMay;
         private Button button_themMay;
-        private Button button4;
-        private Button button3;
-        private Label label6;
-        private Label label7;
-        private TextBox textBox1;
+        private Button button_ThanhToan;
+        private Button button_XuatHoaDon;
+        private Label label_MaySo;
+        private Label label_TongCong;
+        private TextBox textBox_TongGio;
         private ComboBox comboBox2;
         private ComboBox comboBox_loaiMay;
         private TextBox textBox6;
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox textBox_TienMay;
         private ComboBox comboBox3;
         private Label label10;
         private Label label9;
         private Label label8;
         private ContextMenuStrip contextMenuStrip1;
-        private Button button_help;
-        private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
+        private Button button_suaMay;
+        private DataGridView dataGridView_thongTinMay;
+        private DataGridView dataGridView_GoiDichVu;
+        private TextBox textBox_TongCong;
+        private ComboBox comboBox_ThongTinKhachHang;
+        private Label label_ThanhTien;
+        private Label label_KhuyenMai;
+        private Label label_ThanhVien;
+        private ComboBox comboBox_PhuongThucThanhToan;
+        private Button button_ChinhSuaMonAn;
     }
 }

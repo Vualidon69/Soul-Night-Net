@@ -1,6 +1,8 @@
 ﻿using QuanLyQuanNet.Admin.ChucNang;
 using QuanLyQuanNet.Admin.ChucNang.khachhang;
 using QuanLyQuanNet.Admin.ChucNang.Tinh_trang_may;
+using QuanLyQuanNet.Admin.ChucNang.LichSu;
+using QuanLyQuanNet.Admin.NhanVien;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +20,11 @@ namespace QuanLyQuanNet
         public LogAdmin()
         {
             InitializeComponent();
+            btn_menu.Click += btn_menu_Click;
+            btn_status.Click += btn_status_Click;
+            button_khachHang.Click += button_khachHang_Click;
+            btn_lichsu.Click += btn_lichsu_Click;
+            button_NhanVien.Click += button_NhanVien_Click;
         }
 
         private void btn_menu_Click(object sender, EventArgs e)
@@ -71,5 +78,35 @@ namespace QuanLyQuanNet
             khachHangControl.BringToFront();
         }
 
+        private void btn_lichsu_Click(object sender, EventArgs e)
+        {
+            pn_dichvu.Controls.Clear();
+
+            // Tạo một instance của UserControl admin_LichSu
+            uc_LichSu lichsuControl = new uc_LichSu();
+            // Thiết lập Dock để tự động fit vào panel
+            lichsuControl.Dock = DockStyle.Fill;
+            // Thêm UserControl vào panel
+            pn_dichvu.Controls.Add(lichsuControl);
+            // Đưa UserControl lên trên cùng để hiển thị
+            lichsuControl.BringToFront();
+        }
+
+        private void button_NhanVien_Click(object sender, EventArgs e)
+        {
+            pn_dichvu.Controls.Clear();
+
+            // Tạo một instance của UserControl admin_NhanVien
+            admin_NhanVien nhanVienControl = new admin_NhanVien();
+
+            // Thiết lập Dock để tự động fit vào panel
+            nhanVienControl.Dock = DockStyle.Fill;
+
+            // Thêm UserControl vào panel
+            pn_dichvu.Controls.Add(nhanVienControl);
+
+            // Đưa UserControl lên trên cùng để hiển thị
+            nhanVienControl.BringToFront();
+        }
     }
 }

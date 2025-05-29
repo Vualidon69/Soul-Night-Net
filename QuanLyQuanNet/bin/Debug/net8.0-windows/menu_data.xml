@@ -1,0 +1,55 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Menu" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Menu">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Mã_x0020_món" type="xs:string" minOccurs="0" />
+                <xs:element name="Tên_x0020_món" type="xs:string" minOccurs="0" />
+                <xs:element name="Giá_x0020__x0028_VND_x0029_" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Menu>
+    <Mã_x0020_món>MA001</Mã_x0020_món>
+    <Tên_x0020_món>Coca cola</Tên_x0020_món>
+    <Giá_x0020__x0028_VND_x0029_>10,000 VND</Giá_x0020__x0028_VND_x0029_>
+  </Menu>
+  <Menu>
+    <Mã_x0020_món>MA002</Mã_x0020_món>
+    <Tên_x0020_món>Pepsi</Tên_x0020_món>
+    <Giá_x0020__x0028_VND_x0029_>10,000 VND</Giá_x0020__x0028_VND_x0029_>
+  </Menu>
+  <Menu>
+    <Mã_x0020_món>MA004</Mã_x0020_món>
+    <Tên_x0020_món>Trái cây</Tên_x0020_món>
+    <Giá_x0020__x0028_VND_x0029_>40,000 VND</Giá_x0020__x0028_VND_x0029_>
+  </Menu>
+  <Menu>
+    <Mã_x0020_món>MA006</Mã_x0020_món>
+    <Tên_x0020_món>Thuốc lá 3 số</Tên_x0020_món>
+    <Giá_x0020__x0028_VND_x0029_>20,000 VND</Giá_x0020__x0028_VND_x0029_>
+  </Menu>
+  <Menu>
+    <Mã_x0020_món>MA007</Mã_x0020_món>
+    <Tên_x0020_món>Mì trứng</Tên_x0020_món>
+    <Giá_x0020__x0028_VND_x0029_>50,000 VND</Giá_x0020__x0028_VND_x0029_>
+  </Menu>
+  <Menu>
+    <Mã_x0020_món>MA010</Mã_x0020_món>
+    <Tên_x0020_món>Mì gói</Tên_x0020_món>
+    <Giá_x0020__x0028_VND_x0029_>50,000 VND</Giá_x0020__x0028_VND_x0029_>
+  </Menu>
+  <Menu>
+    <Mã_x0020_món>MA012</Mã_x0020_món>
+    <Tên_x0020_món>BCS</Tên_x0020_món>
+    <Giá_x0020__x0028_VND_x0029_>199,000 VND</Giá_x0020__x0028_VND_x0029_>
+  </Menu>
+</NewDataSet>

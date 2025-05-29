@@ -10,13 +10,16 @@
     <Compile Update="Admin\ChucNang\khachhang\uc_khachhang.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Admin\ChucNang\LichSu\admin_LichSu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Admin\ChucNang\menu\admin_Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Admin\ChucNang\menu\frmEditBillDetail.cs">
+    <Compile Update="Admin\ChucNang\menu\ThemMonAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Admin\ChucNang\menu\ThemMonAn.cs">
+    <Compile Update="Admin\ChucNang\Tinh trang may\frmChinhSuaDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Admin\ChucNang\Tinh trang may\uc_tinhTrangMay.cs">
@@ -25,14 +28,17 @@
     <Compile Update="Admin\LogAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Admin\ChucNang\NhanVien\admin_NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Admin\ChucNang\ThongKe\admin_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="LoginMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="thuVien\RoundedPanel.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="UserControl1.cs">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="User\LogUser.cs">
       <SubType>Form</SubType>
