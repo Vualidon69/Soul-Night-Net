@@ -190,9 +190,58 @@ namespace QuanLyQuanNet.Admin.ChucNang
         {
             if (dgvMenu.SelectedRows.Count > 0)
             {
-                string billID = dgvMenu.SelectedRows[0].Cells["Mã món"].Value.ToString();
+                // Lấy dòng được chọn
+                DataGridViewRow selectedRow = dgvMenu.SelectedRows[0];
+
+                // Tạo danh sách món ăn cho ComboBox
+                List<MenuItem> menuItems = new List<MenuItem>();
+                foreach (DataRow row in ((DataTable)dgvMenu.DataSource).Rows)
+                {
+                    menuItems.Add(new MenuItem
+                    {
+                        TenMon = row["Tên món"].ToString(),
+                        Gia = decimal.Parse(row["Giá (VND)"].ToString().Replace(" VND", "").Replace(",", ""))
+                    });
+                }
+
+                // Tạo form chỉnh sửa
                 frmEditBillDetail editForm = new frmEditBillDetail();
-                editForm.ShowDialog();
+                editForm.SetMenuList(menuItems);
+
+                // Lấy thông tin hiện tại
+                string tenMon = selectedRow.Cells["Tên món"].Value.ToString();
+                int soLuong = 1; // Mặc định số lượng là 1 khi chỉnh sửa
+                decimal thanhTien = decimal.Parse(selectedRow.Cells["Giá (VND)"].Value.ToString()
+                                                 .Replace(" VND", "").Replace(",", ""));
+
+                // Thiết lập dữ liệu cho form
+                editForm.SetData(tenMon, soLuong, thanhTien);
+
+                // Hiển thị form và xử lý kết quả
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Cập nhật thông tin món ăn
+                        selectedRow.Cells["Tên món"].Value = editForm.TenMon;
+
+                        // Format lại giá tiền theo định dạng "xx,xxx VND"
+                        selectedRow.Cells["Giá (VND)"].Value = editForm.DonGia.ToString("N0") + " VND";
+
+                        MessageBox.Show("Cập nhật thông tin món thành công!", "Thông báo",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi cập nhật món: " + ex.Message, "Lỗi",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn món cần chỉnh sửa", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -221,6 +270,107 @@ namespace QuanLyQuanNet.Admin.ChucNang
             }
         }
 
-       
+        private void img_monAn_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btn_themMon_Click(object sender, EventArgs e)
+        {
+            using (var formThemMon = new ThemMonAn())
+            {
+                if (formThemMon.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Get the current DataTable from DataGridView
+                        DataTable dt = (DataTable)dgvMenu.DataSource;
+
+                        // Add new row with the data from the form
+                        DataRow newRow = dt.NewRow();
+                        newRow["Mã món"] = formThemMon.MaMon;
+                        newRow["Tên món"] = formThemMon.TenMon;
+                        newRow["Giá (VND)"] = formThemMon.GiaMon.ToString("N0") + " VND";
+
+                        dt.Rows.Add(newRow);
+
+                        // Refresh the DataGridView
+                        dgvMenu.DataSource = dt;
+
+                        // Save the image if it exists
+                        if (formThemMon.AnhMon != null)
+                        {
+                            string projectRoot = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+                            string imgFolder = Path.Combine(projectRoot, "img");
+
+                            // Create directory if it doesn't exist
+                            if (!Directory.Exists(imgFolder))
+                            {
+                                Directory.CreateDirectory(imgFolder);
+                            }
+
+                            // Save the image
+                            string imagePath = Path.Combine(imgFolder, formThemMon.MaMon + ".jpg");
+                            File.WriteAllBytes(imagePath, formThemMon.AnhMon);
+                        }
+
+                        MessageBox.Show("Thêm món thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi thêm món: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btn_xoaMon_Click_1(object sender, EventArgs e)
+        {
+            // Check if a row is selected in the DataGridView
+            if (dgvMenu.CurrentRow != null && !dgvMenu.CurrentRow.IsNewRow)
+            {
+                // Confirm deletion with user
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa món này?", "Xác nhận xóa",
+                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Get the food ID from the selected row
+                        string maMon = dgvMenu.CurrentRow.Cells["Mã món"].Value.ToString();
+
+                        // Remove the row from the DataGridView
+                        DataTable dt = (DataTable)dgvMenu.DataSource;
+                        dt.Rows.RemoveAt(dgvMenu.CurrentRow.Index);
+
+                        // Delete the associated image if it exists
+                        string projectRoot = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+                        string imgFolder = Path.Combine(projectRoot, "img");
+                        string imagePath = Path.Combine(imgFolder, maMon + ".jpg");
+
+                        if (File.Exists(imagePath))
+                        {
+                            File.Delete(imagePath);
+                        }
+
+                        // Clear the textboxes after deletion
+                        txt_maMon.Clear();
+                        txt_tenMon.Clear();
+                        txt_Gia.Clear();
+                        img_monAn.Image = null;
+
+                        MessageBox.Show("Xóa món thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi xóa món: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn món cần xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

@@ -67,6 +67,7 @@
             btn_themMon.TabIndex = 1;
             btn_themMon.Text = "Thêm món";
             btn_themMon.UseVisualStyleBackColor = true;
+            btn_themMon.Click += btn_themMon_Click;
             // 
             // btn_xoaMon
             // 
@@ -76,6 +77,7 @@
             btn_xoaMon.TabIndex = 2;
             btn_xoaMon.Text = "Xoá Món";
             btn_xoaMon.UseVisualStyleBackColor = true;
+            btn_xoaMon.Click += btn_xoaMon_Click_1;
             // 
             // dgvMenu
             // 

@@ -3,28 +3,46 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|c:\\users\\dell\\onedrive\\documents\\github\\soul-night-net\\quanlyquannet\\admin\\chucnang\\nhanvien\\admin_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\nhanvien\\admin_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\menu\\admin_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\menu\\admin_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\menu\\admin_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\menu\\admin_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\Downloads\\menu\\admin_Menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\Downloads\\menu\\admin_Menu.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\menu\\themmonan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\menu\\themmonan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\tinh trang may\\frmchinhsuadichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\tinh trang may\\frmchinhsuadichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|c:\\users\\dell\\onedrive\\documents\\github\\soul-night-net\\quanlyquannet\\admin\\chucnang\\nhanvien\\admin_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\nhanvien\\admin_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\menu\\admin_menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\menu\\admin_menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\logadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\logadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\menu\\themmonan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\menu\\themmonan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\tinh trang may\\uc_tinhtrangmay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\tinh trang may\\uc_tinhtrangmay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\menu\\frmeditbilldetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\menu\\frmeditbilldetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\tinh trang may\\uc_tinhtrangmay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\tinh trang may\\uc_tinhtrangmay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\menu\\themmonan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\menu\\themmonan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\quanlyquannet\\admin\\chucnang\\nhanvien\\admin_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE9E55A9-69EF-4B77-95D1-57B891A0C417}|QuanLyQuanNet\\QuanLyQuanNet.csproj|solutionrelative:quanlyquannet\\admin\\chucnang\\nhanvien\\admin_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +52,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,79 +72,138 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "admin_Menu.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\menu\\admin_Menu.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Downloads\\menu\\admin_Menu.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\menu\\admin_Menu.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\menu\\admin_Menu.cs",
+              "ViewState": "AQIAALMAAAAAAAAAAAAAAMkAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T03:30:43.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "admin_Menu.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\menu\\admin_Menu.Designer.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Downloads\\menu\\admin_Menu.Designer.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\menu\\admin_Menu.Designer.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\menu\\admin_Menu.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T03:29:47.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "admin_Menu.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.Designer.cs",
+              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.Designer.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.Designer.cs",
+              "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.Designer.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAAAIYAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T03:06:27.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmEditBillDetail.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\frmEditBillDetail.cs",
+              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\frmEditBillDetail.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\frmEditBillDetail.cs",
+              "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\frmEditBillDetail.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAuwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T02:56:35.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ThemMonAn.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.Designer.cs",
+              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.Designer.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.Designer.cs",
+              "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.Designer.cs",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAmwKkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T03:02:31.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ThemMonAn.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.cs",
+              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.cs",
+              "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADEAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T02:58:44.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ThemMonAn.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.cs",
+              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.cs [Design]",
+              "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\ThemMonAn.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T02:57:58.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "admin_Menu.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.cs",
+              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.cs [Design]",
+              "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T02:44:59.626Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "admin_Menu.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.cs",
+              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.cs",
+              "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\menu\\admin_Menu.cs",
+              "ViewState": "AQIAANMAAAAAAAAAAAAowPUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T02:43:35.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "admin_NhanVien.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\NhanVien\\admin_NhanVien.cs",
               "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\NhanVien\\admin_NhanVien.cs",
               "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\NhanVien\\admin_NhanVien.cs",
               "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\NhanVien\\admin_NhanVien.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAgwBIAAABIAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAtwEQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T14:49:31.606Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T14:49:31.606Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "admin_NhanVien.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\NhanVien\\admin_NhanVien.cs",
-              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\NhanVien\\admin_NhanVien.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\NhanVien\\admin_NhanVien.cs [Design]",
-              "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\NhanVien\\admin_NhanVien.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T14:48:43.977Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LogAdmin.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\LogAdmin.cs",
-              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\LogAdmin.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\LogAdmin.cs",
-              "RelativeToolTip": "QuanLyQuanNet\\Admin\\LogAdmin.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAowHAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T06:55:44.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "uc_tinhTrangMay.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\uc_tinhTrangMay.cs",
-              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\uc_tinhTrangMay.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\uc_tinhTrangMay.cs",
-              "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\uc_tinhTrangMay.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T08:42:13.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "frmChinhSuaDichVu.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\frmChinhSuaDichVu.cs",
               "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\frmChinhSuaDichVu.cs",
               "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\frmChinhSuaDichVu.cs",
               "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\frmChinhSuaDichVu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAvAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAkwDIAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T02:59:29.653Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "uc_tinhTrangMay.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\uc_tinhTrangMay.cs",
-              "RelativeDocumentMoniker": "QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\uc_tinhTrangMay.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\Soul-Night-Net\\QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\uc_tinhTrangMay.cs [Design]",
-              "RelativeToolTip": "QuanLyQuanNet\\Admin\\ChucNang\\Tinh trang may\\uc_tinhTrangMay.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T02:37:28.895Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-29T02:59:29.653Z"
             }
           ]
         }
