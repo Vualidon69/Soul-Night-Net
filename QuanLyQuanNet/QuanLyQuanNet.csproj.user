@@ -19,6 +19,12 @@
     <Compile Update="Admin\ChucNang\menu\ThemMonAn.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Admin\ChucNang\NhanVien\admin_NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Admin\ChucNang\ThongKe\admin_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Admin\ChucNang\Tinh trang may\frmChinhSuaDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -27,12 +33,6 @@
     </Compile>
     <Compile Update="Admin\LogAdmin.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Admin\ChucNang\NhanVien\admin_NhanVien.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Admin\ChucNang\ThongKe\admin_ThongKe.cs">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="LoginMain.cs">
       <SubType>Form</SubType>

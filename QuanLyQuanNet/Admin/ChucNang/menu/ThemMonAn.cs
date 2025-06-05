@@ -3,32 +3,25 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace QuanLyQuanNet.Admin.ChucNang.menu
 {
     public partial class ThemMonAn : Form
     {
-        // Public properties to expose data
-        public string MaMon { get { return txtMaMon.Text; } }
-        public string TenMon { get { return txtTenMon.Text; } }
-        public decimal GiaMon // Assuming price is a decimal
+        // === PUBLIC PROPERTIES ===
+        public string MaMon => txtMaMon.Text.Trim();
+        public string TenMon => txtTenMon.Text.Trim();
+
+        public decimal GiaMon
         {
             get
             {
-                decimal price;
-                if (decimal.TryParse(txtGia.Text, out price))
-                {
-                    return price;
-                }
-                return 0;
+                return decimal.TryParse(txtGia.Text, out var gia) ? gia : 0;
             }
         }
-        // Property to get image data from PictureBox
+
         public byte[] AnhMon
         {
             get
@@ -45,36 +38,56 @@ namespace QuanLyQuanNet.Admin.ChucNang.menu
             }
         }
 
+        private string selectedImagePath = "";
+
         public ThemMonAn()
         {
             InitializeComponent();
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            btnChonAnh.Click += btnChonAnh_Click;
+            btnOK.Click += btnOK_Click;
+            btnCancel.Click += btnCancel_Click;
         }
 
         private void btnChonAnh_Click(object sender, EventArgs e)
         {
-            // TODO: Implement image selection logic
-            MessageBox.Show("Chọn ảnh button clicked!");
-            // After selecting image, you would set the AnhMon property
-            // Example: AnhMon = File.ReadAllBytes(selectedImagePath);
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Filter = "Ảnh (*.jpg; *.jpeg; *.png)|*.jpg;*.jpeg;*.png|Tất cả tập tin|*.*"
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                selectedImagePath = dialog.FileName;
+                picHinhAnh.Image = Image.FromFile(selectedImagePath);
+                picHinhAnh.SizeMode = PictureBoxSizeMode.Zoom;
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            // TODO: Implement save logic (if needed before closing)
-            MessageBox.Show("Lưu button clicked!");
+            // Simple validation
+            if (string.IsNullOrWhiteSpace(MaMon) ||
+                string.IsNullOrWhiteSpace(TenMon) ||
+                GiaMon <= 0)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ và đúng thông tin món ăn!", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Nếu cần kiểm tra ảnh bắt buộc:
+            // if (AnhMon == null)
+            // {
+            //     MessageBox.Show("Bạn chưa chọn ảnh món ăn!", "Thiếu ảnh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //     return;
+            // }
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            // Implement cancel logic
-            MessageBox.Show("Hủy button clicked!");
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }

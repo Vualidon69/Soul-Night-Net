@@ -22,20 +22,9 @@ namespace QuanLyQuanNet.Admin.ChucNang.khachhang
         private void LoadKhachHangData()
         {
             dtKhachHang = new DataTable();
-            dtKhachHang.Columns.Add("MaKH", typeof(string));
-            dtKhachHang.Columns.Add("HoTen", typeof(string));
-            dtKhachHang.Columns.Add("SDT", typeof(string));
-            dtKhachHang.Columns.Add("Email", typeof(string));
-            dtKhachHang.Columns.Add("SoDiem", typeof(int));
+            string query = "Select * From Khach"; // Câu lệnh SQL để lấy dữ liệu khách hàng
 
-            dtKhachHang.Rows.Add("KH0001", "Nguyễn Đăng Khoa", "0987677543", "nkhoa5353@gmail.com", 9999);
-            dtKhachHang.Rows.Add("KH0002", "Trịnh Trần Phương Tuấn", "0787567432", "j97@bocon.com", 700);
-            dtKhachHang.Rows.Add("KH0003", "Virus", "0676564563", "peter@benho.com", 180);
-            dtKhachHang.Rows.Add("KH0004", "Tuấn Hải", "0976345412", "tuanhai@gmail.com", 340);
-            dtKhachHang.Rows.Add("KH0005", "Xuân Hậu", "0999123999", "xuanhau@gmail.com", 160);
-            dtKhachHang.Rows.Add("KH0006", "Phú Lê", "0993143528", "phulee@gmail.com", 180);
-            dtKhachHang.Rows.Add("KH0007", "Khả Bảnh", "0887886865", "khabanhvippro@gmail.com", 100);
-            dtKhachHang.Rows.Add("KH0008", "Gấm Kami", "0431676567", "gamkmiakagiangpho@gmail.com", 880);
+            dtKhachHang = DataProvider.Instance.ExecuteQuery(query);
 
             dgvKhachHang.DataSource = dtKhachHang;
 
@@ -157,13 +146,35 @@ namespace QuanLyQuanNet.Admin.ChucNang.khachhang
         {
             if (dgvKhachHang.SelectedRows.Count > 0)
             {
-                string maKH = dgvKhachHang.SelectedRows[0].Cells["MaKH"].Value.ToString();
-                DataRow[] rowsToDelete = dtKhachHang.Select($"[MaKH] = '{maKH}'");
-                foreach (DataRow row in rowsToDelete)
+                // Lấy DataRow từ dòng đang chọn
+                DataRow row = ((DataRowView)dgvKhachHang.SelectedRows[0].DataBoundItem).Row;
+
+                // Kiểm tra cột tồn tại
+                if (!dtKhachHang.Columns.Contains("MaKhachHang"))
                 {
-                    dtKhachHang.Rows.Remove(row);
+                    MessageBox.Show("Không tìm thấy cột MaKH trong dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                MessageBox.Show("Xóa khách hàng xong xuôi rồi đó!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                string maKH = dgvKhachHang.SelectedRows[0].Cells["MaKhachHang"].Value.ToString();
+
+
+                // Xác nhận xóa
+                var confirm = MessageBox.Show($"Bạn có chắc muốn xóa khách hàng có mã '{maKH}' không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm != DialogResult.Yes) return;
+
+                // Xóa khỏi CSDL
+                string query = "DELETE FROM Khach WHERE MaKhachHang = @MaKH";
+                var parameters = new Dictionary<string, object>
+        {
+            { "@MaKH", maKH }
+        };
+                int rowsAffected = DataProvider.Instance.ExecNonQuery(query, parameters);
+
+                // Xóa khỏi DataTable
+                dtKhachHang.Rows.Remove(row);
+
+                MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 UpdateDataGridViewHeight();
                 UpdateRowColors();
@@ -173,6 +184,7 @@ namespace QuanLyQuanNet.Admin.ChucNang.khachhang
                 MessageBox.Show("Chọn một khách hàng trước đi bạn ơi! 😅", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {

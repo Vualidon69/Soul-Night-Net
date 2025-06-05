@@ -15,7 +15,6 @@ namespace QuanLyQuanNet.Admin.ChucNang.Tinh_trang_may
             new MenuItem { TenMon = "Thuốc lá 3 số", Gia = 20000 },
             new MenuItem { TenMon = "Mì trứng", Gia = 50000 },
             new MenuItem { TenMon = "Mì gói", Gia = 50000 },
-            new MenuItem { TenMon = "BCS", Gia = 199000 }
         };
 
         public uc_tinhTrangMay()
@@ -54,28 +53,72 @@ namespace QuanLyQuanNet.Admin.ChucNang.Tinh_trang_may
             comboBox_PhuongThucThanhToan.Items.AddRange(new[] { "Tiền mặt", "Chuyển khoản", "Thẻ" });
             comboBox_PhuongThucThanhToan.SelectedIndex = 0;
         }
+        private void LoadDataFromDatabase()
+        {
+            try
+            {
+                string query = "SELECT * FROM May"; // Table gốc trong hệ thống của bạn
+                DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    danhSachMay = ConvertDataTableToMayTinhList(dt);
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu máy tính trong database!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi truy vấn dữ liệu máy tính từ database: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                danhSachMay = new List<MayTinh>(); // fallback tránh crash
+            }
+        }
+
+        private List<MayTinh> ConvertDataTableToMayTinhList(DataTable dt)
+        {
+            var list = new List<MayTinh>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                list.Add(new MayTinh
+                {
+                    SoMay = row["SoMay"].ToString(), // hoặc "SoMay" nếu đúng tên cột
+                    LoaiMay = row["LoaiMay"].ToString(),
+                    TrangThai = row["TrangThai"].ToString()
+                });
+            }
+
+            return list;
+        }
 
         private void LoadData()
         {
             try
             {
-                // Load dữ liệu từ file
-                if (System.IO.File.Exists(FILE_PATH))
+                // Thử load từ database trước
+                LoadDataFromDatabase();
+
+                // Nếu danh sách rỗng thì fallback về file JSON
+                if (danhSachMay == null || danhSachMay.Count == 0)
                 {
-                    string json = System.IO.File.ReadAllText(FILE_PATH);
-                    danhSachMay = System.Text.Json.JsonSerializer.Deserialize<List<MayTinh>>(json) ?? new List<MayTinh>();
-                }
-                else
-                {
-                    // Tạo dữ liệu mẫu nếu chưa có
-                    danhSachMay = new List<MayTinh>
+                    if (System.IO.File.Exists(FILE_PATH))
                     {
-                        new MayTinh { SoMay = "M001", LoaiMay = "Máy vip", TrangThai = "Đang hoạt động" },
-                        new MayTinh { SoMay = "M002", LoaiMay = "Máy Thường", TrangThai = "Đang hoạt động" },
-                        new MayTinh { SoMay = "M003", LoaiMay = "Máy Thường", TrangThai = "Bảo trì" },
-                        new MayTinh { SoMay = "M004", LoaiMay = "Máy Đôi", TrangThai = "Đang hoạt động" },
-                        new MayTinh { SoMay = "M005", LoaiMay = "Máy Thường", TrangThai = "Đã hỏng" }
-                    };
+                        string json = System.IO.File.ReadAllText(FILE_PATH);
+                        danhSachMay = System.Text.Json.JsonSerializer.Deserialize<List<MayTinh>>(json) ?? new List<MayTinh>();
+                    }
+                    else
+                    {
+                        danhSachMay = new List<MayTinh>
+                        {
+                            new MayTinh { SoMay = "M001", LoaiMay = "Máy vip", TrangThai = "Đang hoạt động" },
+                            new MayTinh { SoMay = "M002", LoaiMay = "Máy Thường", TrangThai = "Đang hoạt động" },
+                            new MayTinh { SoMay = "M003", LoaiMay = "Máy Thường", TrangThai = "Bảo trì" },
+                            new MayTinh { SoMay = "M004", LoaiMay = "Máy Đôi", TrangThai = "Đang hoạt động" },
+                            new MayTinh { SoMay = "M005", LoaiMay = "Máy Thường", TrangThai = "Đã hỏng" }
+                        };
+                    }
                 }
 
                 RefreshDataGridView();
@@ -86,6 +129,7 @@ namespace QuanLyQuanNet.Admin.ChucNang.Tinh_trang_may
                 MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void RefreshDataGridView()
         {

@@ -35,25 +35,13 @@ namespace QuanLyQuanNet.Admin.ChucNang
         /// </summary>
         private void LoadMenuData()
         {
-            DataTable dt = new DataTable();
-            dgvMenu.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dgvMenu.EnableHeadersVisualStyles = false;
-            dgvMenu.GridColor = Color.White; // Ẩn viền giữa các ô
-            dt.Columns.Add("Mã món", typeof(string));
-            dt.Columns.Add("Tên món", typeof(string));
-            dt.Columns.Add("Giá (VND)", typeof(string));
-
-            // sửa lại đoạn này làm sao cho để trời thành maMon
-            dt.Rows.Add("MA001", "Coca cola", "10,000 VND");
-            dt.Rows.Add("MA002", "Pepsi", "10,000 VND");
-            dt.Rows.Add("MA004", "Trái cây", "40,000 VND");
-            dt.Rows.Add("MA006", "Thuốc lá 3 số", "20,000 VND");
-            dt.Rows.Add("MA007", "Mì trứng", "50,000 VND");
-            dt.Rows.Add("MA010", "Mì gói", "50,000 VND");
-            dt.Rows.Add("MA012", "BCS", "199,000 VND");
-            dgvMenu.DataSource = dt;
-
+            string query = "SELECT * FROM Menu";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            dgvMenu.DataSource = dt; // Đảm bảo dgvMenu là DataGridView trên Form
         }
+
+
+
         private void dgv_style()
         {
 

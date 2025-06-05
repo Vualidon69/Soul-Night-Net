@@ -23,16 +23,38 @@ namespace QuanLyQuanNet.Admin.ChucNang.khachhang
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtHoTen.Text) || string.IsNullOrWhiteSpace(txtSDT.Text) || string.IsNullOrWhiteSpace(txtEmail.Text))
+            if (string.IsNullOrWhiteSpace(txtHoTen.Text) ||
+                string.IsNullOrWhiteSpace(txtSDT.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin! 😅", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            dtKhachHang.Rows.Add(txtMaKH.Text, txtHoTen.Text, txtSDT.Text, txtEmail.Text, 0);
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            string maKH = GenerateMaKH();
+            string query = "INSERT INTO Khach (MaKhachHang, HoTen, SDT, Email, SoDiem) VALUES (@MaKH, @HoTen, @SDT, @Email, 0)";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@MaKH", maKH },
+                { "@HoTen", txtHoTen.Text },
+                { "@SDT", txtSDT.Text },
+                { "@Email", txtEmail.Text }
+            };
+            int result = DataProvider.Instance.ExecNonQuery(query, parameters);
+
+            if (result > 0)
+            {
+                MessageBox.Show("Đã thêm khách hàng thành công! 🎉");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Thêm khách hàng thất bại! 😢", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
 
         private void btnHuy_Click(object sender, EventArgs e)
         {

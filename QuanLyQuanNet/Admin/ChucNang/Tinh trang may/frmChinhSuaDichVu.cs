@@ -40,17 +40,39 @@ namespace QuanLyQuanNet.Admin.ChucNang.Tinh_trang_may
                     {
                         DichVuTable.Rows.Add(tenMon, soLuong, Convert.ToDecimal(gia.Replace(" VND", "").Replace(",", "")) * soLuong);
                     }
+
+                    // ➕ Ghi xuống DB bảng May (ví dụ chỉ lưu tên món như là tên máy, tuỳ mục đích)
+                    string query = "INSERT INTO May (TenMay, TinhTrang) VALUES (@TenMay, @TinhTrang)";
+                    var parameters = new Dictionary<string, object>
+                    {
+                        { "@TenMay", tenMon },
+                        { "@TinhTrang", "Hoạt động" } // mặc định, hoặc cho chọn
+                    };
+                    DataProvider.Instance.ExecNonQuery(query, parameters);
                 }
             }
         }
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dgvDichVu.SelectedRows.Count > 0)
             {
+                string tenMay = dgvDichVu.SelectedRows[0].Cells["TenMon"].Value.ToString();
+
+                // ⛔ Xoá trong DB
+                string query = "DELETE FROM May WHERE TenMay = @TenMay";
+                var parameters = new Dictionary<string, object>
+                {
+                    { "@TenMay", tenMay }
+                };
+                DataProvider.Instance.ExecNonQuery(query, parameters);
+
+                // ⛔ Xoá khỏi bảng hiện tại
                 dgvDichVu.Rows.RemoveAt(dgvDichVu.SelectedRows[0].Index);
             }
         }
+
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -60,12 +82,24 @@ namespace QuanLyQuanNet.Admin.ChucNang.Tinh_trang_may
                 int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value);
                 if (InputBox("Sửa số lượng", "Số lượng:", ref soLuong) == DialogResult.OK)
                 {
-                    row.Cells["SoLuong"].Value = soLuong;
+                    string tenMay = row.Cells["TenMon"].Value.ToString();
+
                     decimal gia = Convert.ToDecimal(row.Cells["ThanhTien"].Value) / Convert.ToInt32(row.Cells["SoLuong"].Value);
+                    row.Cells["SoLuong"].Value = soLuong;
                     row.Cells["ThanhTien"].Value = gia * soLuong;
+
+                    // ✏️ Update tình trạng máy (nếu có) trong DB
+                    string query = "UPDATE May SET TinhTrang = @TinhTrang WHERE TenMay = @TenMay";
+                    var parameters = new Dictionary<string, object>
+                    {
+                        { "@TinhTrang", "Đang sử dụng" }, // hardcode hoặc cho chọn tình trạng tùy mày
+                        { "@TenMay", tenMay }
+                    };
+                    DataProvider.Instance.ExecNonQuery(query, parameters);
                 }
             }
         }
+
 
         public static DialogResult InputBox(string title, string promptText, ref int value)
         {

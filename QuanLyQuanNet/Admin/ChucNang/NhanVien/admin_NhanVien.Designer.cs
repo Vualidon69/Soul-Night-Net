@@ -85,8 +85,8 @@
             button_chamCong.TabIndex = 2;
             button_chamCong.Text = "Chấm công";
             button_chamCong.UseVisualStyleBackColor = true;
-            button_chamCong.Click += button_chamCong_Click;
-            // 
+            this.button_chamCong.Click += new System.EventHandler(this.button_chamCong_Click);
+            //
             // button_Xóa
             // 
             button_Xóa.Location = new Point(341, 37);

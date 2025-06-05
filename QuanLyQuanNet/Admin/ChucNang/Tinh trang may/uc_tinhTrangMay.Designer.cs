@@ -396,5 +396,6 @@
         private Label label_ThanhVien;
         private ComboBox comboBox_PhuongThucThanhToan;
         private Button button_ChinhSuaMonAn;
+        
     }
 }
