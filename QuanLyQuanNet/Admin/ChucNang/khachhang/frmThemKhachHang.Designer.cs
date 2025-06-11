@@ -31,62 +31,66 @@
             // lblMaKH
             // 
             this.lblMaKH.AutoSize = true;
-            this.lblMaKH.Location = new System.Drawing.Point(30, 30);
+            this.lblMaKH.ForeColor = System.Drawing.Color.Gray;
+            this.lblMaKH.Location = new System.Drawing.Point(40, 30);
             this.lblMaKH.Name = "lblMaKH";
-            this.lblMaKH.Size = new System.Drawing.Size(49, 20);
+            this.lblMaKH.Size = new System.Drawing.Size(107, 20);
             this.lblMaKH.TabIndex = 0;
-            this.lblMaKH.Text = "Mã KH";
+            this.lblMaKH.Text = "Mã khách hàng";
 
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Location = new System.Drawing.Point(100, 30);
+            this.txtMaKH.Location = new System.Drawing.Point(40, 55);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.ReadOnly = true;
-            this.txtMaKH.Size = new System.Drawing.Size(200, 27);
+            this.txtMaKH.Size = new System.Drawing.Size(270, 27);
             this.txtMaKH.TabIndex = 1;
 
             // 
             // lblHoTen
             // 
             this.lblHoTen.AutoSize = true;
-            this.lblHoTen.Location = new System.Drawing.Point(30, 70);
+            this.lblHoTen.ForeColor = System.Drawing.Color.Gray;
+            this.lblHoTen.Location = new System.Drawing.Point(40, 95);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(53, 20);
+            this.lblHoTen.Size = new System.Drawing.Size(54, 20);
             this.lblHoTen.TabIndex = 2;
             this.lblHoTen.Text = "Họ tên";
 
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(100, 70);
+            this.txtHoTen.Location = new System.Drawing.Point(40, 120);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(200, 27);
+            this.txtHoTen.Size = new System.Drawing.Size(270, 27);
             this.txtHoTen.TabIndex = 3;
 
             // 
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
-            this.lblSDT.Location = new System.Drawing.Point(30, 110);
+            this.lblSDT.ForeColor = System.Drawing.Color.Gray;
+            this.lblSDT.Location = new System.Drawing.Point(40, 160);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(34, 20);
+            this.lblSDT.Size = new System.Drawing.Size(97, 20);
             this.lblSDT.TabIndex = 4;
-            this.lblSDT.Text = "SĐT";
+            this.lblSDT.Text = "Số điện thoại";
 
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(100, 110);
+            this.txtSDT.Location = new System.Drawing.Point(40, 185);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(200, 27);
+            this.txtSDT.Size = new System.Drawing.Size(270, 27);
             this.txtSDT.TabIndex = 5;
 
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(30, 150);
+            this.lblEmail.ForeColor = System.Drawing.Color.Gray;
+            this.lblEmail.Location = new System.Drawing.Point(40, 225);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(46, 20);
             this.lblEmail.TabIndex = 6;
@@ -95,31 +99,37 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(100, 150);
+            this.txtEmail.Location = new System.Drawing.Point(40, 250);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(200, 27);
+            this.txtEmail.Size = new System.Drawing.Size(270, 27);
             this.txtEmail.TabIndex = 7;
 
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(100, 200);
+            this.btnLuu.BackColor = System.Drawing.Color.Blue;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(40, 300);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(80, 30);
+            this.btnLuu.Size = new System.Drawing.Size(130, 40);
             this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
 
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(200, 200);
+            this.btnHuy.BackColor = System.Drawing.Color.White;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHuy.ForeColor = System.Drawing.Color.Black;
+            this.btnHuy.Location = new System.Drawing.Point(180, 300);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(80, 30);
+            this.btnHuy.Size = new System.Drawing.Size(130, 40);
             this.btnHuy.TabIndex = 9;
             this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
 
             // 
@@ -127,7 +137,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 250);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(350, 380);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.txtEmail);

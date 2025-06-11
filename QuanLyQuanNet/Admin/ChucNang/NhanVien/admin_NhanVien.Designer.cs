@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             textBox_TimKiem = new TextBox();
             button_Them = new Button();
             button_chamCong = new Button();
@@ -66,40 +68,56 @@
             textBox_TimKiem.Name = "textBox_TimKiem";
             textBox_TimKiem.Size = new Size(121, 27);
             textBox_TimKiem.TabIndex = 0;
-            textBox_TimKiem.TextChanged += textBox_TimKiem_TextChanged_1;
             // 
             // button_Them
             // 
+            button_Them.BackColor = System.Drawing.Color.FromArgb(83, 163, 222);
+            button_Them.FlatAppearance.BorderSize = 0;
+            button_Them.FlatStyle = FlatStyle.Flat;
+            button_Them.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button_Them.ForeColor = Color.White;
             button_Them.Location = new Point(130, 37);
             button_Them.Name = "button_Them";
             button_Them.Size = new Size(94, 29);
             button_Them.TabIndex = 1;
             button_Them.Text = "Thêm";
-            button_Them.UseVisualStyleBackColor = true;
+            button_Them.UseVisualStyleBackColor = false;
             button_Them.Click += button_Them_Click;
             // 
             // button_chamCong
             // 
+            button_chamCong.BackColor = System.Drawing.Color.FromArgb(83, 163, 222);
+            button_chamCong.FlatAppearance.BorderSize = 0;
+            button_chamCong.FlatStyle = FlatStyle.Flat;
+            button_chamCong.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button_chamCong.ForeColor = Color.White;
             button_chamCong.Location = new Point(241, 37);
             button_chamCong.Name = "button_chamCong";
             button_chamCong.Size = new Size(94, 29);
             button_chamCong.TabIndex = 2;
             button_chamCong.Text = "Chấm công";
-            button_chamCong.UseVisualStyleBackColor = true;
+            button_chamCong.UseVisualStyleBackColor = false;
             button_chamCong.Click += button_chamCong_Click;
-            // 
+            //
             // button_Xóa
             // 
+            button_Xóa.BackColor = System.Drawing.Color.FromArgb(220, 53, 69);
+            button_Xóa.FlatAppearance.BorderSize = 0;
+            button_Xóa.FlatStyle = FlatStyle.Flat;
+            button_Xóa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button_Xóa.ForeColor = Color.White;
             button_Xóa.Location = new Point(341, 37);
             button_Xóa.Name = "button_Xóa";
             button_Xóa.Size = new Size(94, 29);
             button_Xóa.TabIndex = 3;
             button_Xóa.Text = "Xóa";
-            button_Xóa.UseVisualStyleBackColor = true;
+            button_Xóa.UseVisualStyleBackColor = false;
             button_Xóa.Click += button_Xoa_Click;
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label10);
             panel1.Controls.Add(label_TaiKhoan);
             panel1.Controls.Add(label_NgayVaoLam);
@@ -236,12 +254,17 @@
             // 
             // button_Sua
             // 
+            button_Sua.BackColor = System.Drawing.Color.FromArgb(83, 163, 222);
+            button_Sua.FlatAppearance.BorderSize = 0;
+            button_Sua.FlatStyle = FlatStyle.Flat;
+            button_Sua.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button_Sua.ForeColor = Color.White;
             button_Sua.Location = new Point(10, 478);
             button_Sua.Name = "button_Sua";
             button_Sua.Size = new Size(235, 29);
             button_Sua.TabIndex = 8;
             button_Sua.Text = "Sửa";
-            button_Sua.UseVisualStyleBackColor = true;
+            button_Sua.UseVisualStyleBackColor = false;
             button_Sua.Click += button_Sua_Click;
             // 
             // textBox_MatKhau
@@ -302,10 +325,33 @@
             // 
             // dataGridView_NhanVien
             // 
+            dataGridView_NhanVien.AllowUserToAddRows = false;
+            dataGridView_NhanVien.AllowUserToDeleteRows = false;
+            dataGridView_NhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView_NhanVien.BackgroundColor = Color.White;
+            dataGridView_NhanVien.BorderStyle = BorderStyle.None;
+            dataGridView_NhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_NhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView_NhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_NhanVien.EnableHeadersVisualStyles = false;
+            dataGridView_NhanVien.GridColor = System.Drawing.Color.Gainsboro;
             dataGridView_NhanVien.Location = new Point(0, 72);
             dataGridView_NhanVien.Name = "dataGridView_NhanVien";
+            dataGridView_NhanVien.ReadOnly = true;
+            dataGridView_NhanVien.RowHeadersVisible = false;
             dataGridView_NhanVien.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView_NhanVien.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView_NhanVien.RowTemplate.Height = 40;
+            dataGridView_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             dataGridView_NhanVien.Size = new Size(441, 500);
             dataGridView_NhanVien.TabIndex = 5;
             dataGridView_NhanVien.SelectionChanged += dataGridView_NhanVien_SelectionChanged;
@@ -323,6 +369,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(240, 242, 245);
             Controls.Add(label_TimKiem);
             Controls.Add(dataGridView_NhanVien);
             Controls.Add(panel1);
@@ -369,5 +416,7 @@
         private Label label_HoTen;
         private Label label_ID;
         private Label label_TimKiem;
+        private System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1;
+        private System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2;
     }
 }

@@ -7,7 +7,17 @@ namespace QuanLyQuanNet
         public LoginMain()
         {
             InitializeComponent();
+
+            // Thiết lập tiêu đề cho form
+            this.Text = "Đăng Nhập Hệ Thống Quản Lý Quán Net";
+
             txt_matKhau.UseSystemPasswordChar = true;
+            // Căn cửa sổ vào giữa
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+            // Tắt nút phóng to cửa sổ
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

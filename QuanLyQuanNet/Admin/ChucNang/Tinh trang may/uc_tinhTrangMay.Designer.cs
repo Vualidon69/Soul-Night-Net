@@ -179,7 +179,6 @@
             button_ChinhSuaMonAn.TabIndex = 7;
             button_ChinhSuaMonAn.Text = "Chỉnh sửa dịch vụ";
             button_ChinhSuaMonAn.UseVisualStyleBackColor = true;
-            button_ChinhSuaMonAn.Click += button_ChinhSuaMonAn_Click;
             // 
             // comboBox_PhuongThucThanhToan
             // 
@@ -367,6 +366,7 @@
         private Panel panel2;
         private Label label_TienMay;
         private Label label_TongGio;
+        private ComboBox comboBox_DanhSachMay;
         private Button button_XoaMay;
         private Button button_themMay;
         private Button button_ThanhToan;
@@ -396,6 +396,6 @@
         private Label label_ThanhVien;
         private ComboBox comboBox_PhuongThucThanhToan;
         private Button button_ChinhSuaMonAn;
-        private ComboBox comboBox_DanhSachMay;
+        
     }
 }
