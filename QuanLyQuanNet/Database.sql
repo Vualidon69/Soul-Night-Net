@@ -2,7 +2,7 @@
 
 
 -- Tạo database
-CREATE DATABASE QuanLyQuanNet;
+CREATE DATABASE QuanLyQuanNet3;
 GO
 
 USE QuanLyQuanNet;

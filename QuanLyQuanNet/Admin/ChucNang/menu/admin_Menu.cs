@@ -24,15 +24,9 @@ namespace QuanLyQuanNet.Admin.ChucNang
             LoadMenuData();
             dgv_style();
 
-            // Explicitly reference frmEditBillDetail to help IDE recognize it
-            // frmEditBillDetail tempForm = new frmEditBillDetail();
+
         }
-        // bang de su ly du lieu mon an
 
-
-        /// <summary>
-        /// text bảng xem có sảy ra chưa cái này load ngay đầu tiên
-        /// </summary>
         private void LoadMenuData()
         {
             string query = "SELECT * FROM Menu";
@@ -88,61 +82,42 @@ namespace QuanLyQuanNet.Admin.ChucNang
         // đọc file ảnh và load thong tin cho chi tiết hóa đơn
         private void dgvMenu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvMenu_CellClick_pln_img(sender, e);// đọc file ảnh
             dgvMenu_CellClick_pln_chiTietMonAn(sender, e); // lấy dgv vô chi tiết món ăn
 
         }
         // đọc file ảnh
-        private void dgvMenu_CellClick_pln_img(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Kiểm tra nếu click vào dòng hợp lệ
-            {
-                dgvMenu.ClearSelection(); // Xóa lựa chọn cũ
-
-                foreach (DataGridViewRow row in dgvMenu.Rows)
-                {
-                    if (!row.IsNewRow)
-                    {
-                        row.DefaultCellStyle.BackColor = Color.White; // Reset màu các dòng
-                    }
-                }
-
-                // Lấy mã món ăn
-                string maMon = dgvMenu.Rows[e.RowIndex].Cells[0].Value.ToString();
-                string projectRoot = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-
-                // Đường dẫn thư mục chứa ảnh
-                string imgFolder = Path.Combine(projectRoot, "img");
-
-                // Đường dẫn file ảnh món ăn
-                string path = Path.Combine(imgFolder, maMon + ".jpg");
-
-                // Đường dẫn file ảnh mặc định
-                string defaultImage = Path.Combine(imgFolder, "default.jpg");
-
-                // Hàm load ảnh an toàn
-                LoadImage(img_monAn, File.Exists(path) ? path : defaultImage);
-
-                // Căn chỉnh ảnh
-                img_monAn.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-        }
+     
         // lấy dgv vô chi tiết món ăn
         private void dgvMenu_CellClick_pln_chiTietMonAn(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Kiểm tra nếu người dùng chọn dòng hợp lệ
+
+            if (e.RowIndex >= 0 && !dgvMenu.Rows[e.RowIndex].IsNewRow)
             {
+                if (pnl_chiTietMonAn != null)
+                {
+                    pnl_chiTietMonAn.Visible = true;
+                }
+                else
+                {
+                    // Optionally handle the null case, e.g., log an error or show a message
+                   
+                }
+
+                // Lấy dòng được chọn
                 DataGridViewRow row = dgvMenu.Rows[e.RowIndex];
 
-                // Hiển thị thông tin lên các TextBox
-                txt_maMon.Text = row.Cells["Mã món"].Value.ToString();
-                txt_tenMon.Text = row.Cells["Tên món"].Value.ToString();
-                txt_Gia.Text = row.Cells["Giá (VND)"].Value.ToString();
-                // Hiển thị hình ảnh nếu có
-                string foodID = row.Cells["Mã món"].Value.ToString();
+                // Điền dữ liệu vào các TextBox tương ứng
+                textBox_MaMon.Text = row.Cells["MaMon"].Value.ToString();
+                textBox_TenMon.Text = row.Cells["TenMon"].Value.ToString();
+                textBox_Gia.Text = row.Cells["Gia"].Value.ToString();
 
+                // Load ảnh
+                string maMon = textBox_MaMon.Text;
+                string imgPath = Path.Combine(Application.StartupPath, "img", maMon + ".jpg");
+              
             }
         }
+
         // Hàm load ảnh an toàn, tránh lỗi OutOfMemoryException
         private void LoadImage(PictureBox pictureBox, string imagePath)
         {
@@ -173,65 +148,8 @@ namespace QuanLyQuanNet.Admin.ChucNang
             }
         }
 
-        // ấn vào sửa chi tiết hóa đơn hiện ra form sửa
-        private void btnEdit_Click_Click(object sender, EventArgs e)
-        {
-            if (dgvMenu.SelectedRows.Count > 0)
-            {
-                // Lấy dòng được chọn
-                DataGridViewRow selectedRow = dgvMenu.SelectedRows[0];
 
-                // Tạo danh sách món ăn cho ComboBox
-                List<MenuItem> menuItems = new List<MenuItem>();
-                foreach (DataRow row in ((DataTable)dgvMenu.DataSource).Rows)
-                {
-                    menuItems.Add(new MenuItem
-                    {
-                        TenMon = row["Tên món"].ToString(),
-                        Gia = decimal.Parse(row["Giá (VND)"].ToString().Replace(" VND", "").Replace(",", ""))
-                    });
-                }
 
-                // Tạo form chỉnh sửa
-                frmEditBillDetail editForm = new frmEditBillDetail();
-                editForm.SetMenuList(menuItems);
-
-                // Lấy thông tin hiện tại
-                string tenMon = selectedRow.Cells["Tên món"].Value.ToString();
-                int soLuong = 1; // Mặc định số lượng là 1 khi chỉnh sửa
-                decimal thanhTien = decimal.Parse(selectedRow.Cells["Giá (VND)"].Value.ToString()
-                                                 .Replace(" VND", "").Replace(",", ""));
-
-                // Thiết lập dữ liệu cho form
-                editForm.SetData(tenMon, soLuong, thanhTien);
-
-                // Hiển thị form và xử lý kết quả
-                if (editForm.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        // Cập nhật thông tin món ăn
-                        selectedRow.Cells["Tên món"].Value = editForm.TenMon;
-
-                        // Format lại giá tiền theo định dạng "xx,xxx VND"
-                        selectedRow.Cells["Giá (VND)"].Value = editForm.DonGia.ToString("N0") + " VND";
-
-                        MessageBox.Show("Cập nhật thông tin món thành công!", "Thông báo",
-                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Lỗi khi cập nhật món: " + ex.Message, "Lỗi",
-                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn món cần chỉnh sửa", "Thông báo",
-                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -258,10 +176,7 @@ namespace QuanLyQuanNet.Admin.ChucNang
             }
         }
 
-        private void img_monAn_Click(object sender, EventArgs e)
-        {
 
-        }
         private void btn_themMon_Click(object sender, EventArgs e)
         {
             using (var formThemMon = new ThemMonAn())
@@ -275,9 +190,9 @@ namespace QuanLyQuanNet.Admin.ChucNang
 
                         // Add new row with the data from the form
                         DataRow newRow = dt.NewRow();
-                        newRow["Mã món"] = formThemMon.MaMon;
-                        newRow["Tên món"] = formThemMon.TenMon;
-                        newRow["Giá (VND)"] = formThemMon.GiaMon.ToString("N0") + " VND";
+                        newRow["MaMon"] = formThemMon.MaMon;
+                        newRow["TenMon"] = formThemMon.TenMon;
+                        newRow["Gia"] = formThemMon.GiaMon; // giữ kiểu số để dễ xử lý
 
                         dt.Rows.Add(newRow);
 
@@ -290,13 +205,9 @@ namespace QuanLyQuanNet.Admin.ChucNang
                             string projectRoot = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
                             string imgFolder = Path.Combine(projectRoot, "img");
 
-                            // Create directory if it doesn't exist
                             if (!Directory.Exists(imgFolder))
-                            {
                                 Directory.CreateDirectory(imgFolder);
-                            }
 
-                            // Save the image
                             string imagePath = Path.Combine(imgFolder, formThemMon.MaMon + ".jpg");
                             File.WriteAllBytes(imagePath, formThemMon.AnhMon);
                         }
@@ -311,27 +222,28 @@ namespace QuanLyQuanNet.Admin.ChucNang
             }
         }
 
+
         private void btn_xoaMon_Click_1(object sender, EventArgs e)
         {
-            // Check if a row is selected in the DataGridView
+            // Kiểm tra có dòng được chọn không
             if (dgvMenu.CurrentRow != null && !dgvMenu.CurrentRow.IsNewRow)
             {
-                // Confirm deletion with user
+                // Hỏi xác nhận từ người dùng
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa món này?", "Xác nhận xóa",
-                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                                      MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
                     try
                     {
-                        // Get the food ID from the selected row
-                        string maMon = dgvMenu.CurrentRow.Cells["Mã món"].Value.ToString();
+                        // Lấy mã món từ dòng được chọn
+                        string maMon = dgvMenu.CurrentRow.Cells["MaMon"].Value.ToString(); // SỬA TÊN CỘT
 
-                        // Remove the row from the DataGridView
+                        // Xóa dòng khỏi DataTable
                         DataTable dt = (DataTable)dgvMenu.DataSource;
                         dt.Rows.RemoveAt(dgvMenu.CurrentRow.Index);
 
-                        // Delete the associated image if it exists
+                        // Xóa ảnh nếu có
                         string projectRoot = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
                         string imgFolder = Path.Combine(projectRoot, "img");
                         string imagePath = Path.Combine(imgFolder, maMon + ".jpg");
@@ -341,11 +253,11 @@ namespace QuanLyQuanNet.Admin.ChucNang
                             File.Delete(imagePath);
                         }
 
-                        // Clear the textboxes after deletion
+                        // Xóa dữ liệu trên giao diện
                         txt_maMon.Clear();
                         txt_tenMon.Clear();
                         txt_Gia.Clear();
-                        img_monAn.Image = null;
+                  
 
                         MessageBox.Show("Xóa món thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -358,6 +270,72 @@ namespace QuanLyQuanNet.Admin.ChucNang
             else
             {
                 MessageBox.Show("Vui lòng chọn món cần xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvMenu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            if (dgvMenu.Columns[e.ColumnIndex].Name == "Gia" && e.Value != null)
+            {
+                e.Value = string.Format("{0:N0} VND", Convert.ToDecimal(e.Value));
+                e.FormattingApplied = true;
+            }
+        }
+
+        private void button_chinhsua_Click(object sender, EventArgs e)
+        {
+            if (dgvMenu.CurrentRow != null && !dgvMenu.CurrentRow.IsNewRow)
+            {
+                try
+                {
+                    // Lấy chỉ số dòng đang chọn
+                    int rowIndex = dgvMenu.CurrentRow.Index;
+                    DataTable dt = (DataTable)dgvMenu.DataSource;
+
+                    // Lấy thông tin mới từ các TextBox
+                    string maMon = textBox_MaMon.Text.Trim();
+                    string tenMon = textBox_TenMon.Text.Trim();
+                    string giaStr = textBox_Gia.Text.Trim();
+
+                    if (string.IsNullOrWhiteSpace(maMon) || string.IsNullOrWhiteSpace(tenMon) || !decimal.TryParse(giaStr, out decimal gia))
+                    {
+                        MessageBox.Show("Vui lòng nhập đúng và đầy đủ thông tin!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    // Cập nhật vào DataTable
+                    dt.Rows[rowIndex]["MaMon"] = maMon;
+                    dt.Rows[rowIndex]["TenMon"] = tenMon;
+                    dt.Rows[rowIndex]["Gia"] = gia;
+
+                    dgvMenu.DataSource = dt; // Cập nhật lại lưới
+
+                    MessageBox.Show("Cập nhật món thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi cập nhật món: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một món trong danh sách để chỉnh sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvMenu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvMenu.Columns["TenMon"].Index && e.RowIndex >= 0)
+            {
+                // Lấy giá trị ô được click
+                string tenMon = dgvMenu.Rows[e.RowIndex].Cells["TenMon"].Value.ToString();
+
+                // Điền vào TextBox tên món
+                textBox_TenMon.Text = tenMon;
+
+                // Focus vào TextBox để chỉnh sửa ngay
+                textBox_TenMon.Focus();
             }
         }
     }

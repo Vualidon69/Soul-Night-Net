@@ -28,7 +28,6 @@
         private void InitializeComponent()
         {
             pnlMenu = new RoundedPanel();
-            button7 = new Button();
             roundedPanel1 = new RoundedPanel();
             button2 = new Button();
             button9 = new Button();
@@ -59,7 +58,6 @@
             pnlMenu.BorderColor = Color.Black;
             pnlMenu.BorderRadius = 20;
             pnlMenu.BorderThickness = 2;
-            pnlMenu.Controls.Add(button7);
             pnlMenu.Controls.Add(roundedPanel1);
             pnlMenu.Controls.Add(button2);
             pnlMenu.Controls.Add(button9);
@@ -78,15 +76,6 @@
             pnlMenu.Size = new Size(253, 700);
             pnlMenu.TabIndex = 0;
             // 
-            // button7
-            // 
-            button7.Location = new Point(3, 643);
-            button7.Name = "button7";
-            button7.Size = new Size(247, 45);
-            button7.TabIndex = 3;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
-            // 
             // roundedPanel1
             // 
             roundedPanel1.BorderColor = Color.Black;
@@ -99,7 +88,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(3, 349);
+            button2.Location = new Point(3, 483);
             button2.Name = "button2";
             button2.Size = new Size(243, 39);
             button2.TabIndex = 2;
@@ -108,7 +97,7 @@
             // 
             // button9
             // 
-            button9.Location = new Point(3, 448);
+            button9.Location = new Point(3, 416);
             button9.Name = "button9";
             button9.Size = new Size(243, 39);
             button9.TabIndex = 2;
@@ -117,17 +106,16 @@
             // 
             // button_NhanVien
             // 
-            button_NhanVien.Location = new Point(3, 414);
+            button_NhanVien.Location = new Point(3, 349);
             button_NhanVien.Name = "button_NhanVien";
-            button_NhanVien.Size = new Size(246, 39);
+            button_NhanVien.Size = new Size(243, 39);
             button_NhanVien.TabIndex = 2;
             button_NhanVien.Text = "Nhân viên";
             button_NhanVien.UseVisualStyleBackColor = true;
-           
             // 
             // button6
             // 
-            button6.Location = new Point(3, 383);
+            button6.Location = new Point(3, 381);
             button6.Name = "button6";
             button6.Size = new Size(243, 39);
             button6.TabIndex = 2;
@@ -136,7 +124,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(3, 480);
+            button5.Location = new Point(3, 449);
             button5.Name = "button5";
             button5.Size = new Size(243, 38);
             button5.TabIndex = 2;
@@ -241,9 +229,9 @@
             lb_tenNhanVien.AutoSize = true;
             lb_tenNhanVien.Location = new Point(518, 34);
             lb_tenNhanVien.Name = "lb_tenNhanVien";
-            lb_tenNhanVien.Size = new Size(49, 20);
+            lb_tenNhanVien.Size = new Size(86, 20);
             lb_tenNhanVien.TabIndex = 5;
-            lb_tenNhanVien.Text = "Name";
+            lb_tenNhanVien.Text = "Hoàng Đôn";
             // 
             // img_thongBao
             // 
@@ -295,7 +283,7 @@
         private Button button2;
         private Button btn_menu;
         private Label label1;
-        private Button button7;
+        private Button button_DangXuat;
         private RoundedPanel pl_top_admin;
         private Label lb_dichVu;
         private Button button8;

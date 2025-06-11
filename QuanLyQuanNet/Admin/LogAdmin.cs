@@ -25,6 +25,14 @@ namespace QuanLyQuanNet
             button_khachHang.Click += button_khachHang_Click;
             btn_lichsu.Click += btn_lichsu_Click;
             button_NhanVien.Click += button_NhanVien_Click;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Hoặc FixedDialog
+            this.MaximizeBox = false;
+            this.MinimizeBox = true;
+
+            // Thiết lập kích thước cố định
+           
+
+            // ... các thiết lập khác
         }
 
         private void btn_menu_Click(object sender, EventArgs e)

@@ -66,6 +66,7 @@
             textBox_TimKiem.Name = "textBox_TimKiem";
             textBox_TimKiem.Size = new Size(121, 27);
             textBox_TimKiem.TabIndex = 0;
+            textBox_TimKiem.TextChanged += textBox_TimKiem_TextChanged_1;
             // 
             // button_Them
             // 
@@ -85,8 +86,8 @@
             button_chamCong.TabIndex = 2;
             button_chamCong.Text = "Chấm công";
             button_chamCong.UseVisualStyleBackColor = true;
-            this.button_chamCong.Click += new System.EventHandler(this.button_chamCong_Click);
-            //
+            button_chamCong.Click += button_chamCong_Click;
+            // 
             // button_Xóa
             // 
             button_Xóa.Location = new Point(341, 37);

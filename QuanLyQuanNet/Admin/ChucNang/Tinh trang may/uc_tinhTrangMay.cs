@@ -17,6 +17,28 @@ namespace QuanLyQuanNet.Admin.ChucNang.Tinh_trang_may
             new MenuItem { TenMon = "Mì gói", Gia = 50000 },
         };
 
+                public void CapNhatMenuVaoDatabase()
+                {
+                    // Bước 1: Xóa toàn bộ dữ liệu cũ
+
+
+                    // Bước 2: Chèn lại dữ liệu từ menuList
+                    int i = 1;
+                    foreach (var item in menuList)
+                    {
+                        string query = "INSERT INTO Menu (MaMon, TenMon, Gia) VALUES (@MaMon, @TenMon, @Gia)";
+                        var parameters = new Dictionary<string, object>
+                        {
+                            { "@MaMon", $"M{i:000}" },
+                            { "@TenMon", item.TenMon },
+                            { "@Gia", item.Gia }
+                        };
+                        DataProvider.Instance.ExecNonQuery(query, parameters);
+                        i++;
+                    }
+                }
+
+
         public uc_tinhTrangMay()
         {
             InitializeComponent();
@@ -25,7 +47,7 @@ namespace QuanLyQuanNet.Admin.ChucNang.Tinh_trang_may
             // Cài đặt giao diện
             DataGridViewHelper.SetupDefaultStyle(dataGridView_thongTinMay);
             DataGridViewHelper.SetupDefaultStyle(dataGridView_GoiDichVu);
-            
+            CapNhatMenuVaoDatabase();
             SetupComboBoxes();
             LoadData();
             AddGoiDichVuColumns();

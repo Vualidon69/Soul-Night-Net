@@ -32,8 +32,6 @@
             btn_themMon = new Button();
             btn_xoaMon = new Button();
             dgvMenu = new DataGridView();
-            img_monAn = new PictureBox();
-            pnl_chiTietMonAn = new RoundedPanel();
             lb_tenMon = new Label();
             txt_tenMon = new TextBox();
             txt_Gia = new TextBox();
@@ -43,10 +41,18 @@
             btnEdit_Click = new Button();
             panel1 = new Panel();
             lb_timKiemMonAn = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            panel_ChinhSua = new RoundedPanel();
+            label3 = new Label();
+            label_Gia = new Label();
+            label_MaMon = new Label();
+            textBox_MaMon = new TextBox();
+            textBox_TenMon = new TextBox();
+            textBox_Gia = new TextBox();
+            button_chinhsua = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvMenu).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)img_monAn).BeginInit();
-            pnl_chiTietMonAn.SuspendLayout();
             panel1.SuspendLayout();
+            panel_ChinhSua.SuspendLayout();
             SuspendLayout();
             // 
             // txtSearch
@@ -93,33 +99,8 @@
             dgvMenu.Size = new Size(414, 474);
             dgvMenu.TabIndex = 4;
             dgvMenu.CellClick += dgvMenu_CellClick;
-            // 
-            // img_monAn
-            // 
-            img_monAn.BackColor = SystemColors.ActiveCaption;
-            img_monAn.Location = new Point(447, 80);
-            img_monAn.Name = "img_monAn";
-            img_monAn.Size = new Size(246, 162);
-            img_monAn.SizeMode = PictureBoxSizeMode.Zoom;
-            img_monAn.TabIndex = 5;
-            img_monAn.TabStop = false;
-            // 
-            // pnl_chiTietMonAn
-            // 
-            pnl_chiTietMonAn.BorderColor = Color.Black;
-            pnl_chiTietMonAn.BorderRadius = 20;
-            pnl_chiTietMonAn.BorderThickness = 2;
-            pnl_chiTietMonAn.Controls.Add(lb_tenMon);
-            pnl_chiTietMonAn.Controls.Add(txt_tenMon);
-            pnl_chiTietMonAn.Controls.Add(txt_Gia);
-            pnl_chiTietMonAn.Controls.Add(lb_Gia);
-            pnl_chiTietMonAn.Controls.Add(lb_maMon);
-            pnl_chiTietMonAn.Controls.Add(txt_maMon);
-            pnl_chiTietMonAn.Controls.Add(btnEdit_Click);
-            pnl_chiTietMonAn.Location = new Point(450, 283);
-            pnl_chiTietMonAn.Name = "pnl_chiTietMonAn";
-            pnl_chiTietMonAn.Size = new Size(246, 251);
-            pnl_chiTietMonAn.TabIndex = 6;
+            dgvMenu.CellContentClick += dgvMenu_CellContentClick;
+            dgvMenu.CellFormatting += dgvMenu_CellFormatting;
             // 
             // lb_tenMon
             // 
@@ -175,9 +156,8 @@
             btnEdit_Click.Name = "btnEdit_Click";
             btnEdit_Click.Size = new Size(191, 29);
             btnEdit_Click.TabIndex = 0;
-            btnEdit_Click.Text = "Sửa chi tiêt hóa đơn";
+            btnEdit_Click.Text = "Sửa chi tiết menu";
             btnEdit_Click.UseVisualStyleBackColor = true;
-            btnEdit_Click.Click += btnEdit_Click_Click;
             // 
             // panel1
             // 
@@ -190,30 +170,104 @@
             // lb_timKiemMonAn
             // 
             lb_timKiemMonAn.AutoSize = true;
+            lb_timKiemMonAn.BackColor = Color.White;
             lb_timKiemMonAn.Location = new Point(13, 23);
             lb_timKiemMonAn.Name = "lb_timKiemMonAn";
             lb_timKiemMonAn.Size = new Size(124, 20);
             lb_timKiemMonAn.TabIndex = 8;
             lb_timKiemMonAn.Text = "Tìm kiếm món ăn";
             // 
+            // panel_ChinhSua
+            // 
+            panel_ChinhSua.BorderColor = Color.Black;
+            panel_ChinhSua.BorderRadius = 20;
+            panel_ChinhSua.BorderThickness = 2;
+            panel_ChinhSua.Controls.Add(label3);
+            panel_ChinhSua.Controls.Add(label_Gia);
+            panel_ChinhSua.Controls.Add(label_MaMon);
+            panel_ChinhSua.Controls.Add(textBox_MaMon);
+            panel_ChinhSua.Controls.Add(textBox_TenMon);
+            panel_ChinhSua.Controls.Add(textBox_Gia);
+            panel_ChinhSua.Controls.Add(button_chinhsua);
+            panel_ChinhSua.Location = new Point(431, 80);
+            panel_ChinhSua.Name = "panel_ChinhSua";
+            panel_ChinhSua.Size = new Size(281, 474);
+            panel_ChinhSua.TabIndex = 9;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(3, 234);
+            label3.Name = "label3";
+            label3.Size = new Size(66, 20);
+            label3.TabIndex = 6;
+            label3.Text = "Tên món";
+            // 
+            // label_Gia
+            // 
+            label_Gia.AutoSize = true;
+            label_Gia.Location = new Point(3, 174);
+            label_Gia.Name = "label_Gia";
+            label_Gia.Size = new Size(72, 20);
+            label_Gia.TabIndex = 5;
+            label_Gia.Text = "Giá(VND)";
+            // 
+            // label_MaMon
+            // 
+            label_MaMon.AutoSize = true;
+            label_MaMon.Location = new Point(3, 108);
+            label_MaMon.Name = "label_MaMon";
+            label_MaMon.Size = new Size(64, 20);
+            label_MaMon.TabIndex = 4;
+            label_MaMon.Text = "Mã món";
+            // 
+            // textBox_MaMon
+            // 
+            textBox_MaMon.Location = new Point(93, 101);
+            textBox_MaMon.Name = "textBox_MaMon";
+            textBox_MaMon.Size = new Size(185, 27);
+            textBox_MaMon.TabIndex = 3;
+            // 
+            // textBox_TenMon
+            // 
+            textBox_TenMon.Location = new Point(93, 227);
+            textBox_TenMon.Name = "textBox_TenMon";
+            textBox_TenMon.Size = new Size(185, 27);
+            textBox_TenMon.TabIndex = 2;
+            // 
+            // textBox_Gia
+            // 
+            textBox_Gia.Location = new Point(93, 167);
+            textBox_Gia.Name = "textBox_Gia";
+            textBox_Gia.Size = new Size(185, 27);
+            textBox_Gia.TabIndex = 1;
+            // 
+            // button_chinhsua
+            // 
+            button_chinhsua.Location = new Point(3, 304);
+            button_chinhsua.Name = "button_chinhsua";
+            button_chinhsua.Size = new Size(278, 35);
+            button_chinhsua.TabIndex = 0;
+            button_chinhsua.Text = "Chỉnh sửa Menu";
+            button_chinhsua.UseVisualStyleBackColor = true;
+            button_chinhsua.Click += button_chinhsua_Click;
+            // 
             // admin_Menu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel_ChinhSua);
             Controls.Add(lb_timKiemMonAn);
             Controls.Add(panel1);
-            Controls.Add(pnl_chiTietMonAn);
-            Controls.Add(img_monAn);
             Controls.Add(btn_xoaMon);
             Controls.Add(btn_themMon);
             Controls.Add(txtSearch);
             Name = "admin_Menu";
             Size = new Size(715, 575);
             ((System.ComponentModel.ISupportInitialize)dgvMenu).EndInit();
-            ((System.ComponentModel.ISupportInitialize)img_monAn).EndInit();
-            pnl_chiTietMonAn.ResumeLayout(false);
-            pnl_chiTietMonAn.PerformLayout();
             panel1.ResumeLayout(false);
+            panel_ChinhSua.ResumeLayout(false);
+            panel_ChinhSua.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -224,7 +278,6 @@
         private Button btn_themMon;
         private Button btn_xoaMon;
         private DataGridView dgvMenu;
-        private PictureBox img_monAn;
         private RoundedPanel pnl_chiTietMonAn;
         private Label lb_tenMon;
         private TextBox txt_tenMon;
@@ -235,5 +288,14 @@
         private Button btnEdit_Click;
         private Panel panel1;
         private Label lb_timKiemMonAn;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private RoundedPanel panel_ChinhSua;
+        private Button button_chinhsua;
+        private Label label3;
+        private Label label_Gia;
+        private Label label_MaMon;
+        private TextBox textBox_MaMon;
+        private TextBox textBox_TenMon;
+        private TextBox textBox_Gia;
     }
 }

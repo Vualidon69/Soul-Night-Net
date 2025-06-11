@@ -38,15 +38,9 @@ namespace QuanLyQuanNet.Admin.ChucNang.menu
                 string query = "SELECT TenMon, Gia FROM Menu";
                 DataTable dt = DataProvider.Instance.ExecuteQuery(query);
 
-                MenuList = dt.AsEnumerable().Select(row => new MenuItem
-                {
-                    TenMon = row["TenMon"].ToString(),
-                    Gia = Convert.ToDecimal(row["Gia"])
-                }).ToList();
-
-                cbTenMon.DataSource = MenuList;
-                cbTenMon.DisplayMember = "TenMon";
-                cbTenMon.ValueMember = "Gia";
+            
+                cbTenMon.DataSource = dt; // Đảm bảo dgvMenu là DataGridView trên Form
+             
 
                 if (MenuList.Count > 0)
                 {

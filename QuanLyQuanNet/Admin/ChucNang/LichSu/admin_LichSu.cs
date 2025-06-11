@@ -54,35 +54,52 @@ namespace QuanLyQuanNet.Admin.ChucNang.LichSu
 
         private void button_XemChiTiet_Click(object sender, EventArgs e)
         {
+            // **1. Check if a row is selected**
             if (dataGridView_LichSu.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một hóa đơn để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            DataGridViewRow row = dataGridView_LichSu.SelectedRows[0];
+            try
+            {
+                DataGridViewRow row = dataGridView_LichSu.SelectedRows[0];
 
-            string soHD = row.Cells["SoHD"].Value?.ToString();
-            string maKH = row.Cells["MaKH"].Value?.ToString();
-            string maNV = row.Cells["MaNV"].Value?.ToString();
-            string may = row.Cells["May"].Value?.ToString();
-            string soGio = row.Cells["SoGio"].Value?.ToString();
-            string thanhTien = row.Cells["ThanhTien"].Value?.ToString();
-            string ngayHoaDon = Convert.ToDateTime(row.Cells["NgayHoaDon"].Value).ToString("dd/MM/yyyy HH:mm");
-            string hinhThucTra = row.Cells["HinhThucTra"].Value?.ToString();
+                // **2. Safely retrieve cell values (handle nulls)**
+                string soHD = row.Cells["SoHD"].Value?.ToString() ?? "N/A";
+                string maKH = row.Cells["MaKH"].Value?.ToString() ?? "N/A";
+                string maNV = row.Cells["MaNV"].Value?.ToString() ?? "N/A";
+                string may = row.Cells["May"].Value?.ToString() ?? "N/A";
+                string soGio = row.Cells["SoGio"].Value?.ToString() ?? "N/A";
+                string thanhTien = row.Cells["ThanhTien"].Value?.ToString() ?? "0";
+                string ngayHoaDon = "N/A";
+                string hinhThucTra = row.Cells["HinhThucTra"].Value?.ToString() ?? "N/A";
 
-            string message = $"Số HĐ: {soHD}\n" +
-                             $"Mã KH: {maKH}\n" +
-                             $"Mã NV: {maNV}\n" +
-                             $"Máy: {may}\n" +
-                             $"Số giờ: {soGio}\n" +
-                             $"Thành tiền: {thanhTien} VNĐ\n" +
-                             $"Ngày hóa đơn: {ngayHoaDon}\n" +
-                             $"Hình thức trả: {hinhThucTra}";
+                // **3. Handle date parsing safely**
+                if (row.Cells["NgayHoaDon"].Value != null && DateTime.TryParse(row.Cells["NgayHoaDon"].Value.ToString(), out DateTime date))
+                {
+                    ngayHoaDon = date.ToString("dd/MM/yyyy HH:mm");
+                }
 
-            MessageBox.Show(message, "Chi tiết hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // **4. Format the message with clear labels**
+                string message = $@"=== CHI TIẾT HÓA ĐƠN ===
+Số HĐ: {soHD}
+Mã KH: {maKH}
+Mã NV: {maNV}
+Máy: {may}
+Số giờ: {soGio} giờ
+Thành tiền: {thanhTien:N0} VNĐ
+Ngày hóa đơn: {ngayHoaDon}
+Hình thức thanh toán: {hinhThucTra}";
+
+                // **5. Show the details in a formatted MessageBox**
+                MessageBox.Show(message, "Chi tiết hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xem chi tiết hóa đơn: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void button_xuatFile_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog

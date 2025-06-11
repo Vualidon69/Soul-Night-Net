@@ -61,7 +61,7 @@
             button_XemChiTiet.TabIndex = 5;
             button_XemChiTiet.Text = "Xem chi tiết";
             button_XemChiTiet.UseVisualStyleBackColor = true;
-            
+            button_XemChiTiet.Click += button_XemChiTiet_Click;
             // 
             // button_xuatFile
             // 
@@ -71,7 +71,7 @@
             button_xuatFile.TabIndex = 6;
             button_xuatFile.Text = "Xuất file excel";
             button_xuatFile.UseVisualStyleBackColor = true;
-           
+            button_xuatFile.Click += button_xuatFile_Click;
             // 
             // uc_LichSu
             // 

@@ -13,7 +13,7 @@ namespace QuanLyQuanNet
         public static DataProvider Instance => instance.Value;
 
         // Connection string nên đặt vào app.config hoặc file cấu hình riêng
-        private readonly string connectionString = @"Data Source=DESKTOP-QVMA3G7\SQLEXPRESS;Initial Catalog=QuanLyQuanNet2;Integrated Security=True;Trust Server Certificate=True"; // Đây là chuỗi dùng để biết được các thông tin database để kết nối
+        private readonly string connectionString = @"Data Source=DESKTOP-QVMA3G7\SQLEXPRESS;Initial Catalog=QuanLyQuanNet3;Integrated Security=True;Encrypt=True;Trust Server Certificate=True"; // Đây là chuỗi dùng để biết được các thông tin database để kết nối
         private DataProvider() { }
 
         /// <summary>
@@ -63,15 +63,15 @@ namespace QuanLyQuanNet
             using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
             {
-                if (parameters != null)
-                {
-                    foreach (var param in parameters)
+                connection.Open();
+
+                foreach (var param in parameters)
                     {
                         command.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
                     }
-                }
+                
 
-                connection.Open();
+               
             }
             return result;
         }
@@ -82,6 +82,7 @@ namespace QuanLyQuanNet
         /// Thực thi câu truy vấn trả về một giá trị duy nhất (vd: COUNT(*), MAX, MIN...)
         /// </summary>
         public object ExecuteScalar(string query)
+
         {
             try
             {
@@ -98,6 +99,10 @@ namespace QuanLyQuanNet
                 throw;
             }
         }
-        
+
+        internal int? ExecuteScalar(string query, object value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

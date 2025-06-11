@@ -21,7 +21,28 @@ namespace QuanLyQuanNet.Admin.ChucNang.menu
                 return decimal.TryParse(txtGia.Text, out var gia) ? gia : 0;
             }
         }
+        // Add these to your ThemMonAn form class
+        public void SetEditValues(string maMon, string tenMon, string gia)
+        {
+            // Disable the ID field since we shouldn't change it
+            txtMaMon.Enabled = false;
 
+            // Set the values
+            txtMaMon.Text = maMon;
+            txtTenMon.Text = tenMon;
+            txtGia.Text = gia;
+        }
+
+        public void SetImage(byte[] imageBytes)
+        {
+            if (imageBytes != null && imageBytes.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream(imageBytes))
+                {
+                    picHinhAnh.Image = Image.FromStream(ms);
+                }
+            }
+        }
         public byte[] AnhMon
         {
             get

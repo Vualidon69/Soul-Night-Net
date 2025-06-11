@@ -106,7 +106,6 @@
             dgvKhachHang.Size = new Size(695, 515);
             dgvKhachHang.TabIndex = 0;
             dgvKhachHang.CellClick += dgvKhachHang_CellClick;
-            //dgvKhachHang.CellContentClick += dgvKhachHang_CellContentClick_1;
             dgvKhachHang.CellDoubleClick += dgvKhachHang_CellDoubleClick;
             // 
             // uc_khachhang

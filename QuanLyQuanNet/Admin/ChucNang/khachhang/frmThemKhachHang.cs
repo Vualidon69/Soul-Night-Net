@@ -42,7 +42,7 @@ namespace QuanLyQuanNet.Admin.ChucNang.khachhang
             };
             int result = DataProvider.Instance.ExecNonQuery(query, parameters);
 
-            if (result > 0)
+            if (result == 0)
             {
                 MessageBox.Show("Đã thêm khách hàng thành công! 🎉");
                 this.DialogResult = DialogResult.OK;
